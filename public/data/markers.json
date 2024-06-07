@@ -1,0 +1,467 @@
+[
+    {
+        "device_name": "Gateway-001",
+        "type": "GATEWAY",
+        "device_reference": "LAIRD-RG-186",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296913",
+        "geocode": [
+            50.81362270205693,
+            4.268017237931706
+        ],
+        "place": "Université libre de Bruxelles - Campus Erasme",
+        "description": "Passerelle Laird Sentrius RG186 - LoRaWAN Gateway 868 MHz",
+        "application_name": "smartcampus",
+        "device_eui": ""
+    },
+    {
+        "device_name": "Gateway-003",
+        "type": "GATEWAY",
+        "device_reference": "LAIRD-RG-186",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296968",
+        "geocode": [
+            50.81374811268144,
+            4.269175489598283
+        ],
+        "place": "Université libre de Bruxelles - Campus Erasme",
+        "description": "Passerelle Laird Sentrius RG186 - LoRaWAN Gateway 868 MHz",
+        "application_name": "smartcampus",
+        "device_eui": ""
+    },
+    {
+        "device_name": "Gateway-006",
+        "type": "GATEWAY",
+        "device_reference": "LAIRD-RG-186",
+        "status": 0,
+        "gateway_id": "c0ee40ffff296bf2",
+        "geocode": [
+            50.814842899237696,
+            4.383470996533153
+        ],
+        "place": "Université libre de Bruxelles - Campus du Solbosch",
+        "description": "Passerelle Laird Sentrius RG186 - LoRaWAN Gateway 868 MHz - Hors service",
+        "application_name": "smartcampus",
+        "device_eui": ""
+    },
+    {
+        "device_name": "Gateway-009",
+        "type": "GATEWAY",
+        "device_reference": "LAIRD-RG-186",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296f70",
+        "geocode": [
+            50.81302614961098,
+            4.383147954940797
+        ],
+        "place": "Université libre de Bruxelles - Campus du Solbosch",
+        "description": "Passerelle Laird Sentrius RG186 - LoRaWAN Gateway 868 MHz",
+        "application_name": "smartcampus",
+        "device_eui": ""
+    },
+    {
+        "device_name": "Gateway-011",
+        "type": "GATEWAY",
+        "device_reference": "Lorix-One",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine",
+        "description": "Passerelle LORIX One - LoRaWAN Gateway 868 MHz",
+        "application_name": "smartcampus",
+        "device_eui": ""
+    },
+    {
+        "device_name": "Gateway-021",
+        "type": "GATEWAY",
+        "device_reference": "LAIRD-RG-186",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296c0e",
+        "geocode": [
+            50.8185936,
+            4.3983624
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine",
+        "description": "Passerelle Laird Sentrius RG186 - LoRaWAN Gateway 868 MHz",
+        "application_name": "smartcampus",
+        "device_eui": ""
+    },
+    {
+        "device_name": "node-T033",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "APFP – Analytical Platform of the Faculty of Pharmacy [Chambre froide B6.301]",
+        "description": "APFP Temperature Monitoring",
+        "application_name": "smartcampus-apfp",
+        "device_eui": "a84041000181bd44"
+    },
+    {
+        "device_name": "node-T034",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "APFP – Analytical Platform of the Faculty of Pharmacy [QTOF]",
+        "description": "APFP Temperature Monitoring",
+        "application_name": "smartcampus-apfp",
+        "device_eui": "a84041000181bd59"
+    },
+    {
+        "device_name": "node-T035",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "APFP – Analytical Platform of the Faculty of Pharmacy [QTOF]",
+        "description": "APFP Temperature Monitoring",
+        "application_name": "smartcampus-apfp",
+        "device_eui": "a84041000181bd7f"
+    },
+    {
+        "device_name": "node-T037",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "APFP – Analytical Platform of the Faculty of Pharmacy [Générateurs azotes]",
+        "description": "APFP Temperature Monitoring",
+        "application_name": "smartcampus-apfp",
+        "device_eui": "a84041000181bd73"
+    },
+    {
+        "device_name": "node-T038",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "APFP – Analytical Platform of the Faculty of Pharmacy [Frigo 1 B6.205]",
+        "description": "APFP Temperature Monitoring",
+        "application_name": "smartcampus-apfp",
+        "device_eui": "a84041000181bd67"
+    },
+    {
+        "device_name": "node-T039",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "APFP – Analytical Platform of the Faculty of Pharmacy [C1 -20°C B6.205]",
+        "description": "APFP Temperature Monitoring",
+        "application_name": "smartcampus-apfp",
+        "device_eui": "a84041000181bd58"
+    },
+    {
+        "device_name": "node-T040",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "APFP – Analytical Platform of the Faculty of Pharmacy [C2 -20°C B6.205]",
+        "description": "APFP Temperature Monitoring",
+        "application_name": "smartcampus-apfp",
+        "device_eui": "a84041000181bd54"
+    },
+    {
+        "device_name": "node-T108",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "APFP – Analytical Platform of the Faculty of Pharmacy [C3 -80°C B6.103]",
+        "description": "APFP Temperature Monitoring",
+        "application_name": "smartcampus-apfp",
+        "device_eui": "a840418be1838ad7"
+    },
+    {
+        "device_name": "node-T030",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296c0e",
+        "geocode": [
+            50.8185936,
+            4.3983624
+        ],
+        "place": "CIREM – Centre d’Instrumentation en REsonance Magnétique [Plaine-A.2.301]",
+        "description": "SmartCampus CIREM",
+        "application_name": "smartcampus-cirem",
+        "device_eui": "a84041000181bd80"
+    },
+    {
+        "device_name": "node-T032",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296f70",
+        "geocode": [
+            50.81302614961098,
+            4.383147954940797
+        ],
+        "place": "CIREM – Centre d’Instrumentation en REsonance Magnétique [Solbosch-P2bis-V400]",
+        "description": "SmartCampus CIREM",
+        "application_name": "smartcampus-cirem",
+        "device_eui": "a84041000181bd46"
+    },
+    {
+        "device_name": "node-T109",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296f70",
+        "geocode": [
+            50.81302614961098,
+            4.383147954940797
+        ],
+        "place": "CIREM – Centre d’Instrumentation en REsonance Magnétique [Solbosch-P2bis-B300]",
+        "description": "SmartCampus CIREM",
+        "application_name": "smartcampus-cirem",
+        "device_eui": "a840418561838ad0"
+    },
+    {
+        "device_name": "node-cirem-01",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "c0ee40ffff296f70",
+        "geocode": [
+            50.81302614961098,
+            4.383147954940797
+        ],
+        "place": "CIREM – Centre d’Instrumentation en REsonance Magnétique [Plaine-A.2.301-2]",
+        "description": "SmartCampus CIREM",
+        "application_name": "smartcampus-cirem",
+        "device_eui": "a8404111618571bd"
+    },
+    {
+        "device_name": "node-T006",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296968",
+        "geocode": [
+            50.81374811268144,
+            4.269175489598283
+        ],
+        "place": "Université libre de Bruxelles - Campus Erasme [Erasme-G.2.3 - Fridge A-231]",
+        "description": "SmartCampus Erasme",
+        "application_name": "smartcampus-erasme",
+        "device_eui": "a84041000181bb5c"
+    },
+    {
+        "device_name": "node-T010",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "c0ee40ffff296913",
+        "geocode": [
+            50.81362270205693,
+            4.268017237931706
+        ],
+        "place": "Université libre de Bruxelles - Campus Erasme [Erasme-J.1.13 - Office]",
+        "description": "SmartCampus Erasme",
+        "application_name": "smartcampus-erasme",
+        "device_eui": "a84041000181bb7d"
+    },
+    {
+        "device_name": "node-T017",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "c0ee40ffff296bf2",
+        "geocode": [
+            50.812846,
+            4.379051
+        ],
+        "place": "SISC – Shared ICT Services Centre | Université libre de Bruxelles - Campus du Solbosch",
+        "description": "SmartCampus SISC",
+        "application_name": "smartcampus-sisc",
+        "device_eui": "a84041000181bb7a"
+    },
+    {
+        "device_name": "node-T018",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "c0ee40ffff296bf2",
+        "geocode": [
+            50.812846,
+            4.379051
+        ],
+        "place": "SISC – Shared ICT Services Centre | Université libre de Bruxelles - Campus du Solbosch",
+        "description": "SmartCampus SISC",
+        "application_name": "smartcampus-sisc",
+        "device_eui": "a84041000181bb61"
+    },
+    {
+        "device_name": "node-T019",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "c0ee40ffff296bf2",
+        "geocode": [
+            50.812846,
+            4.379051
+        ],
+        "place": "SISC – Shared ICT Services Centre | Université libre de Bruxelles - Campus du Solbosch",
+        "description": "SmartCampus SISC",
+        "application_name": "smartcampus-sisc",
+        "device_eui": "a84041000181bb69"
+    },
+    {
+        "device_name": "node-T020",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "c0ee40ffff296bf2",
+        "geocode": [
+            50.812846,
+            4.379051
+        ],
+        "place": "SISC – Shared ICT Services Centre | Université libre de Bruxelles - Campus du Solbosch",
+        "description": "SmartCampus SISC",
+        "application_name": "smartcampus-sisc",
+        "device_eui": "a84041000181bb68"
+    },
+    {
+        "device_name": "node-T100",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.8185936,
+            4.3983624
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine [Frigo 5ème 1.B5.316]",
+        "description": "SmartCampus Vaccine Fridge Monitoring",
+        "application_name": "smartcampus-vaccine",
+        "device_eui": "a84041cf61838acf"
+    },
+    {
+        "device_name": "node-T101",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine [Frigo 1 7ème 1.B7.317]",
+        "description": "SmartCampus Vaccine Fridge Monitoring",
+        "application_name": "smartcampus-vaccine",
+        "device_eui": "a840417d31838ad5"
+    },
+    {
+        "device_name": "node-T102",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine [Frigo 2 7ème 1.B7.317]",
+        "description": "SmartCampus Vaccine Fridge Monitoring",
+        "application_name": "smartcampus-vaccine",
+        "device_eui": "a84041eba18389a0"
+    },
+    {
+        "device_name": "node-T103",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 0,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine [Salle GC 1.B7.117]",
+        "description": "SmartCampus Vaccine Fridge Monitoring",
+        "application_name": "smartcampus-vaccine",
+        "device_eui": "a840415fe183897b"
+    },
+    {
+        "device_name": "node-T104",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine [Congelo 5ème 1.B5.316]",
+        "description": "SmartCampus Vaccine Fridge Monitoring",
+        "application_name": "smartcampus-vaccine",
+        "device_eui": "a8404131e1838ada"
+    },
+    {
+        "device_name": "node-T105",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine [Congelo 1 7ème 1.B7.317]",
+        "description": "SmartCampus Vaccine Fridge Monitoring",
+        "application_name": "smartcampus-vaccine",
+        "device_eui": "a840415cf1838ad6"
+    },
+    {
+        "device_name": "node-T106",
+        "type": "CAPTEUR",
+        "device_reference": "Dragino-LHT65",
+        "status": 1,
+        "gateway_id": "fcc23dfffe0ba2df",
+        "geocode": [
+            50.819496303077024,
+            4.397304201463968
+        ],
+        "place": "Université libre de Bruxelles - Campus de la Plaine [Congelo 2 1.B7.317]",
+        "description": "SmartCampus Vaccine Fridge Monitoring",
+        "application_name": "smartcampus-vaccine",
+        "device_eui": "a84041e4e1838ad4"
+    }
+]
