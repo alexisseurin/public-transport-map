@@ -4,18 +4,24 @@
 ## Framework : React
 ## Variant : TypeScript + SWC
 
-## npm install 
-## npm install react-leaflet react-leaflet-markercluster react-leaflet-cluster leaflet
-## npm run dev
-
-### Vérifier les gateway_id car certaines captent deux gateway_id
-
-*** application_name : smartcampus vient d'être créé pour cette map ***
-
-#### https://onlinepngtools.com/change-png-color-tone Change color png placeholder
-
-#### https://fonts.google.com/ icons and fonts
+## Documentation
+- [React Reference Overview](https://react.dev/reference/react)
 
 
-## Author : Alexis Seurin
+## Commands
+
+```
+npm install 
+npm install react-leaflet react-leaflet-markercluster react-leaflet-cluster leaflet
+npm run dev
+```
+
+### Icons and fonts
+https://fonts.google.com/ 
+
+
+## Authors
+- [Alexis Seurin](https://github.com/alexisseurin)
+
+
 ## Université Libre de Bruxelles - STARI 2024

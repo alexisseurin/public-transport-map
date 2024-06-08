@@ -1,7 +1,8 @@
 {
   "name": "map-project",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Infrastructure Map of SmartCampus",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +10,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "keywords": [],
+  "author": "Alexis Seurin",
   "dependencies": {
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
