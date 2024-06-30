@@ -1,12 +1,13 @@
-# Map of SmartCampus
+# Infrastructure Map
+```
+npm create vite@latest
+```
 
-## npm create vite@latest
-## Framework : React
-## Variant : TypeScript + SWC
+Framework : React
+Variant : TypeScript + SWC
 
 ## Documentation
 - [React Reference Overview](https://react.dev/reference/react)
-
 
 ## Commands
 
@@ -20,8 +21,3 @@ npm run dev
 https://fonts.google.com/ 
 
 
-## Authors
-- [Alexis Seurin](https://github.com/alexisseurin)
-
-
-## Université Libre de Bruxelles - STARI 2024
