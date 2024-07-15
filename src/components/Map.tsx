@@ -1,9 +1,9 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import { gatewayIcon, sensorIcon } from "./Icon";
-import sensorPlaceholder from "../assets/sensor.png";
-import gatewayPlaceholder from "../assets/gateway.png";
+import { trainIcon, stopIcon } from "./Icon";
+import stopPlaceholder from "../assets/stop.svg";
+import trainPlaceholder from "../assets/train.svg";
 import { StopData, RouteData } from '../types';
 import "./Map.css";
 import { divIcon, point, LatLngExpression } from "leaflet";
@@ -54,12 +54,12 @@ const Map: React.FC<MapProps> = ({ stops, routes }) => {
           <Marker
             key={index}
             position={[stop.stop_coordinates.lat, stop.stop_coordinates.lon]}
-            icon={stop.location_type === "GATEWAY" ? gatewayIcon : sensorIcon}
+            icon={stop.location_type === "GATEWAY" ? trainIcon : stopIcon}
           >
             <Popup>
               <div className="popup-content">
                 <img
-                  src={stop.location_type === "GATEWAY" ? gatewayPlaceholder : sensorPlaceholder}
+                  src={stop.location_type === "GATEWAY" ? trainPlaceholder : stopPlaceholder}
                   alt={stop.location_type}
                 />
                 <div className="device-name">{stop.stop_name}</div>

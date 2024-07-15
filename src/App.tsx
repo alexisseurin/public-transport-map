@@ -7,19 +7,20 @@ import sensorPlaceholder from "./assets/sensor.png";
 import gatewayPlaceholder from "./assets/gateway.png";
 import './components/Icon.css';
 import './components/StatCounter.css';
-import { MarkerData, RouteData } from './types';
+import { MarkerData, RouteData, StopData, TrainData } from './types';
 
 function App() {
   const [markers, setMarkers] = useState<MarkerData[]>([]);
   const [routes, setRoutes] = useState<RouteData[]>([]);
-  const [stops, setStops] = useState<any[]>([]);
+  const [stops, setStops] = useState<StopData[]>([]);
+  const [trains, setTrains] = useState<TrainData[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     fetch('data/markers.json')
       .then(response => response.json())
       .then(data => {
-        console.log('Markers loaded:', data); // Log pour vérifier les données
+        console.log('Markers loaded:', data); 
         setMarkers(data);
         setIsLoaded(true);
       })
@@ -31,7 +32,7 @@ function App() {
     fetch('data/gtfs-routes-production.json')
       .then(response => response.json())
       .then(data => {
-        console.log('Routes loaded:', data); // Log pour vérifier les données
+        console.log('Routes loaded:', data); 
         setRoutes(data);
       })
       .catch(error => {
@@ -41,11 +42,21 @@ function App() {
     fetch('data/gtfs-stops-production.json')
       .then(response => response.json())
       .then(data => {
-        console.log('Stops loaded:', data); // Log pour vérifier les données
+        console.log('Stops loaded:', data); 
         setStops(data);
       })
       .catch(error => {
         console.error('Error loading stops:', error);
+      });
+
+    fetch('data/vehicle-position-rt-production.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Trains loaded:', data); 
+        setTrains(data);
+      })
+      .catch(error => {
+        console.error('Error loading trains:', error);
       });
   }, []);
 
@@ -78,7 +89,7 @@ function App() {
           </span>
         </div>
       </div>
-      {isLoaded && <Map /*markers={markers}*/ routes={routes} stops={stops} />}
+      {isLoaded && <Map routes={routes} stops={stops} trains={trains} />}
     </div>
   );
 }

@@ -22,7 +22,7 @@ export interface RouteData {
     type: string;
     geometry: {
       type: string;
-      coordinates: [number, number][];
+      coordinates: [number, number][][];
     };
   };
 }
@@ -44,3 +44,11 @@ export interface StopData {
   wheelchair_boarding: string | null;
 }
 
+export interface TrainData {
+  lineid: string;
+  vehiclepositions: {
+    directionId: string;
+    distanceFromPoint: number;
+    pointId: string;
+  }[];
+}

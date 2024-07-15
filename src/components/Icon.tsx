@@ -1,15 +1,15 @@
 import { Icon } from "leaflet";
-import sensorPlaceholder from "../assets/sensor.png";
-import gatewayPlaceholder from "../assets/train.svg";
+import stopPlaceholder from "../assets/stop.svg";
+import trainPlaceholder from "../assets/train.svg";
 
-export const gatewayIcon = new Icon({
-  iconUrl: gatewayPlaceholder,
+export const trainIcon = new Icon({
+  iconUrl: trainPlaceholder,
   iconSize: [43, 43],
   className: "marker-icon"
 });
 
-export const sensorIcon = new Icon({
-  iconUrl: sensorPlaceholder,
+export const stopIcon = new Icon({
+  iconUrl: stopPlaceholder,
   iconSize: [38, 38],
   className: "marker-icon"
 });
