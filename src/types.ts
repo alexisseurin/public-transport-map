@@ -26,3 +26,21 @@ export interface RouteData {
     };
   };
 }
+
+export interface StopData {
+  stop_id: string;
+  stop_code: string | null;
+  stop_name: string;
+  stop_coordinates: {
+    lon: number;
+    lat: number;
+  };
+  stop_desc: string | null;
+  zone_id: string | null;
+  stop_url: string | null;
+  location_type: string;
+  parent_station: string;
+  stop_timezone: string | null;
+  wheelchair_boarding: string | null;
+}
+

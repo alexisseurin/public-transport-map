@@ -4,12 +4,12 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import { gatewayIcon, sensorIcon } from "./Icon";
 import sensorPlaceholder from "../assets/sensor.png";
 import gatewayPlaceholder from "../assets/gateway.png";
-import { MarkerData, RouteData } from '../types';
+import { StopData, RouteData } from '../types';
 import "./Map.css";
 import { divIcon, point, LatLngExpression } from "leaflet";
 
 interface MapProps {
-  markers: MarkerData[];
+  stops: StopData[];
   routes: RouteData[];
 }
 
@@ -19,7 +19,8 @@ const createClusterCustomIcon = (cluster: any) => divIcon({
   iconSize: point(35, 35, true)
 });
 
-const Map: React.FC<MapProps> = ({ markers, routes }) => {
+
+const Map: React.FC<MapProps> = ({ stops, routes }) => {
   console.log('Routes in Map component:', routes);
 
   const tramRoutes = routes.map((route, index) => {
@@ -33,7 +34,7 @@ const Map: React.FC<MapProps> = ({ markers, routes }) => {
       <Polyline
         key={index}
         positions={coordinates}
-        color={`#${route.route_color || '0000FF'}`} // Utilise une couleur par défaut si route_color n'est pas défini
+        color={`#${route.route_color}`} // Utilise une couleur par défaut si route_color n'est pas défini
         weight={5} // Rend la ligne plus épaisse
         opacity={0.7} // Ajuste l'opacité pour plus de visibilité
         lineJoin="round" // Ajoute des coins arrondis
@@ -49,51 +50,51 @@ const Map: React.FC<MapProps> = ({ markers, routes }) => {
         url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
       />
       <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
-        {markers.map((marker, index) => (
+        {stops.map((stop, index) => (
           <Marker
             key={index}
-            position={marker.geocode}
-            icon={marker.type === "GATEWAY" ? gatewayIcon : sensorIcon}
+            position={[stop.stop_coordinates.lat, stop.stop_coordinates.lon]}
+            icon={stop.location_type === "GATEWAY" ? gatewayIcon : sensorIcon}
           >
             <Popup>
               <div className="popup-content">
                 <img
-                  src={marker.type === "GATEWAY" ? gatewayPlaceholder : sensorPlaceholder}
-                  alt={marker.type}
+                  src={stop.location_type === "GATEWAY" ? gatewayPlaceholder : sensorPlaceholder}
+                  alt={stop.location_type}
                 />
-                <div className="device-name">{marker.device_name}</div>
+                <div className="device-name">{stop.stop_name}</div>
                 <div className="info-grid">
                   <div className="info-label">Statut</div>
                   <div className="info-value">
                     <span
-                      className={`status-indicator ${marker.status === 1 ? 'active' : 'inactive'}`}
+                      className={`status-indicator ${stop.stop_id === "1" ? 'active' : 'inactive'}`}
                     />
-                    {marker.status === 1 ? 'actif' : 'inactif'}
+                    {stop.stop_id === "1" ? 'actif' : 'inactif'}
                   </div>
                   <div className="info-label">ID</div>
-                  <div className="info-value info-id">{marker.gateway_id}</div>
+                  <div className="info-value info-id">{stop.stop_id}</div>
                   <div className="info-label">Type</div>
-                  <div className="info-value">{marker.type}</div>
+                  <div className="info-value">{stop.location_type}</div>
                   <div className="info-label">Lieu</div>
-                  <div className="info-value">{marker.place}</div>
+                  <div className="info-value">{stop.parent_station}</div>
                   <div className="info-label">Application</div>
-                  <div className="info-value">{marker.application_name}</div>
+                  <div className="info-value">{stop.stop_name}</div>
                   <div className="info-label">Référence</div>
-                  <div className="info-value">{marker.device_reference}</div>
+                  <div className="info-value">{stop.stop_name}</div>
                   <div className="info-label">Latitude</div>
-                  <div className="info-value">{marker.geocode[0]}</div>
+                  <div className="info-value">{stop.stop_name}</div>
                   <div className="info-label">Longitude</div>
-                  <div className="info-value">{marker.geocode[1]}</div>
-                  {marker.device_eui && (
+                  <div className="info-value">{stop.stop_name}</div>
+                  {stop.stop_name && (
                     <>
                       <div className="info-label">Device EUI</div>
-                      <div className="info-value">{marker.device_eui}</div>
+                      <div className="info-value">{stop.stop_name}</div>
                     </>
                   )}
                 </div>
                 <div className="description">
                   <span className="description-title">Description</span><br />
-                  {marker.description}
+                  {stop.stop_name}
                 </div>
               </div>
             </Popup>

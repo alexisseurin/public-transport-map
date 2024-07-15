@@ -12,6 +12,7 @@ import { MarkerData, RouteData } from './types';
 function App() {
   const [markers, setMarkers] = useState<MarkerData[]>([]);
   const [routes, setRoutes] = useState<RouteData[]>([]);
+  const [stops, setStops] = useState<any[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -35,6 +36,16 @@ function App() {
       })
       .catch(error => {
         console.error('Error loading routes:', error);
+      });
+
+    fetch('data/gtfs-stops-production.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Stops loaded:', data); // Log pour vérifier les données
+        setStops(data);
+      })
+      .catch(error => {
+        console.error('Error loading stops:', error);
       });
   }, []);
 
@@ -67,7 +78,7 @@ function App() {
           </span>
         </div>
       </div>
-      {isLoaded && <Map markers={markers} routes={routes} />}
+      {isLoaded && <Map /*markers={markers}*/ routes={routes} stops={stops} />}
     </div>
   );
 }
