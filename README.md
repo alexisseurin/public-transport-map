@@ -1,10 +1,10 @@
-# Infrastructure Map
+# Public transport map
 ```
 npm create vite@latest
 ```
 
 Framework : React
-Variant : TypeScript + SWC
+Variant : TypeScript and SWC
 
 ## Documentation
 - [React Reference Overview](https://react.dev/reference/react)

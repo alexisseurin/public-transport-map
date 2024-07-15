@@ -1,4 +1,3 @@
-// App.tsx
 import { useEffect, useState, useMemo } from 'react';
 import './App.css';
 import "leaflet/dist/leaflet.css";
@@ -8,23 +7,34 @@ import sensorPlaceholder from "./assets/sensor.png";
 import gatewayPlaceholder from "./assets/gateway.png";
 import './components/Icon.css';
 import './components/StatCounter.css';
-import { MarkerData } from './types';
-
+import { MarkerData, RouteData } from './types';
 
 function App() {
   const [markers, setMarkers] = useState<MarkerData[]>([]);
+  const [routes, setRoutes] = useState<RouteData[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch('/data/markers.json')
+    fetch('data/markers.json')
       .then(response => response.json())
       .then(data => {
+        console.log('Markers loaded:', data); // Log pour vérifier les données
         setMarkers(data);
         setIsLoaded(true);
       })
       .catch(error => {
         console.error('Error loading markers:', error);
         setIsLoaded(true);
+      });
+
+    fetch('data/gtfs-routes-production.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Routes loaded:', data); // Log pour vérifier les données
+        setRoutes(data);
+      })
+      .catch(error => {
+        console.error('Error loading routes:', error);
       });
   }, []);
 
@@ -45,11 +55,11 @@ function App() {
   return (
     <div className="app-container">
       <div className="top-left-text">
-        <span>Infrastructure SmartCampus</span>
+        <span>Public transport map</span>
       </div>
       <div className="bottom-left-stats">
-        <StatCounter icon={sensorPlaceholder} label="capteurs" count={sensorCount} />
-        <StatCounter icon={gatewayPlaceholder} label="passerelles (gateways)" count={gatewayCount} />
+        <StatCounter icon={sensorPlaceholder} label="Capteurs" count={sensorCount} />
+        <StatCounter icon={gatewayPlaceholder} label="Passerelles" count={gatewayCount} />
         <div className="stat-item">
           <span>
             <span className="status-indicator active" />
@@ -57,7 +67,7 @@ function App() {
           </span>
         </div>
       </div>
-      {isLoaded && <Map markers={markers} />}
+      {isLoaded && <Map markers={markers} routes={routes} />}
     </div>
   );
 }

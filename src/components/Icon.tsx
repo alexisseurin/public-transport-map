@@ -1,6 +1,6 @@
 import { Icon } from "leaflet";
 import sensorPlaceholder from "../assets/sensor.png";
-import gatewayPlaceholder from "../assets/gateway.png";
+import gatewayPlaceholder from "../assets/train.svg";
 
 export const gatewayIcon = new Icon({
   iconUrl: gatewayPlaceholder,

@@ -1,8 +1,8 @@
 {
-  "name": "map-project",
+  "name": "public-transport-map",
   "private": true,
   "version": "1.0.0",
-  "description": "Infrastructure Map of SmartCampus",
+  "description": "Public Transport Map",
   "type": "module",
   "scripts": {
     "dev": "vite",
