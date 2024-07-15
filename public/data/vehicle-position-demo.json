@@ -1,6 +1,0 @@
-[
-    {
-        "lineid": "12",
-        "vehiclepositions": "[{\"directionId\": \"1780\", \"distanceFromPoint\": 309, \"pointId\": \"9600\"}, {\"directionId\": \"9600\", \"distanceFromPoint\": 335, \"pointId\": \"2247\"}, {\"directionId\": \"9600\", \"distanceFromPoint\": 544, \"pointId\": \"1131\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 706, \"pointId\": \"5048\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 0, \"pointId\": \"9600\"}, {\"directionId\": \"9600\", \"distanceFromPoint\": 0, \"pointId\": \"1780\"}, {\"directionId\": \"9600\", \"distanceFromPoint\": 4465, \"pointId\": \"1155\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 1442, \"pointId\": \"2250\"}]"
-    }
-]

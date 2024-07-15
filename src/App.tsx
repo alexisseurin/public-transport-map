@@ -20,7 +20,7 @@ function App() {
     fetch('data/markers.json')
       .then(response => response.json())
       .then(data => {
-        console.log('Markers loaded:', data); 
+        console.log('Markers loaded:', data);
         setMarkers(data);
         setIsLoaded(true);
       })
@@ -32,7 +32,7 @@ function App() {
     fetch('data/gtfs-routes-production.json')
       .then(response => response.json())
       .then(data => {
-        console.log('Routes loaded:', data); 
+        console.log('Routes loaded:', data);
         setRoutes(data);
       })
       .catch(error => {
@@ -42,22 +42,29 @@ function App() {
     fetch('data/gtfs-stops-production.json')
       .then(response => response.json())
       .then(data => {
-        console.log('Stops loaded:', data); 
+        console.log('Stops loaded:', data);
         setStops(data);
       })
       .catch(error => {
         console.error('Error loading stops:', error);
       });
 
-    fetch('data/vehicle-position-rt-production.json')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Trains loaded:', data); 
-        setTrains(data);
-      })
-      .catch(error => {
-        console.error('Error loading trains:', error);
-      });
+    const fetchTrainData = () => {
+      fetch('data/vehicle-position-rt-production.json')
+        .then(response => response.json())
+        .then(data => {
+          console.log('Trains loaded:', data);
+          setTrains(data);
+        })
+        .catch(error => {
+          console.error('Error loading trains:', error);
+        });
+    };
+
+    fetchTrainData();
+    const interval = setInterval(fetchTrainData, 20000); // Update every 20 seconds
+
+    return () => clearInterval(interval); // Clean up on component unmount
   }, []);
 
   const { sensorCount, gatewayCount, activeSensorCount, activeGatewayCount } = useMemo(() => {

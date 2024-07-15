@@ -116,7 +116,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
             key={`${train.lineid}-${position.pointId}`}
             position={trainPosition}
             icon={trainIcon}
-            zIndexOffset={1000}  // Add this line to bring trains to the front
+            zIndexOffset={1000} // Ensure trains are rendered above other markers
           >
             <Popup>
               <div className="popup-content">
@@ -164,8 +164,6 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                 />
                 <div className="device-name">{stop.stop_name}</div>
                 <div className="info-grid">
-                  <div className="info-label">ID</div>
-                  <div className="info-value info-id">{stop.stop_id}</div>
                   <div className="info-label">Type</div>
                   <div className="info-value">{stop.location_type}</div>
                   <div className="info-label">Station Parent</div>
@@ -176,8 +174,8 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           </Marker>
         ))}
         {tramRoutes}
-        {trainMarkers}
       </MarkerClusterGroup>
+      {trainMarkers}
     </MapContainer>
   );
 };
