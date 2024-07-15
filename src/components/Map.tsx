@@ -19,11 +19,13 @@ const createClusterCustomIcon = (cluster: any) => divIcon({
   iconSize: point(35, 35, true)
 });
 
-
 const Map: React.FC<MapProps> = ({ stops, routes }) => {
   console.log('Routes in Map component:', routes);
 
-  const tramRoutes = routes.map((route, index) => {
+  // Filtrer les routes pour ne garder que celles de type "Subway" ou "Tram"
+  const filteredRoutes = routes.filter(route => route.route_type === "Subway" || route.route_type === "Tram");
+
+  const tramRoutes = filteredRoutes.map((route, index) => {
     // Chaque coordonnée est un tableau de paires [longitude, latitude], nous devons les convertir en [latitude, longitude]
     const coordinates = route.shape.geometry.coordinates[0].map(
       (coord: [number, number]) => [coord[1], coord[0]] as LatLngExpression
@@ -82,19 +84,9 @@ const Map: React.FC<MapProps> = ({ stops, routes }) => {
                   <div className="info-label">Référence</div>
                   <div className="info-value">{stop.stop_name}</div>
                   <div className="info-label">Latitude</div>
-                  <div className="info-value">{stop.stop_name}</div>
+                  <div className="info-value">{stop.stop_coordinates.lat}</div>
                   <div className="info-label">Longitude</div>
-                  <div className="info-value">{stop.stop_name}</div>
-                  {stop.stop_name && (
-                    <>
-                      <div className="info-label">Device EUI</div>
-                      <div className="info-value">{stop.stop_name}</div>
-                    </>
-                  )}
-                </div>
-                <div className="description">
-                  <span className="description-title">Description</span><br />
-                  {stop.stop_name}
+                  <div className="info-value">{stop.stop_coordinates.lon}</div>
                 </div>
               </div>
             </Popup>
