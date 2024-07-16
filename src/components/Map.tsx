@@ -38,13 +38,6 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   console.log('Stops in Map component:', stops);
   console.log('Routes in Map component:', routes);
   console.log('Trains in Map component:', trains);
-
-
-  const isStraightLine = (coordinates) => {
-    if (coordinates.length < 3) return true;
-    const [[x1, y1], [x2, y2], [x3, y3]] = coordinates.slice(0, 3);
-    return (y2 - y1) * (x3 - x2) === (y3 - y2) * (x2 - x1);
-  };
   
   const tramRoutes = routes
   //.filter(route => route.route_type == "Subway" && "Tram")
@@ -71,7 +64,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   });
 
 
-  const filteredStops = stops.filter(stop => stop.stop_id.length <= 5);
+  //const filteredStops = stops.filter(stop => stop.stop_id.length <= 5);
 
   const calculateTrainPositions = () => {
     return trains.flatMap(train => {
@@ -163,7 +156,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
       />
       <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
-        {filteredStops.map((stop, index) => (
+        {stops.map((stop, index) => (
           <Marker
             key={index}
             position={[stop.stop_coordinates.lat, stop.stop_coordinates.lon]}
