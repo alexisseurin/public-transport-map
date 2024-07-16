@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 8px;
-  padding-bottom: 10px;
 }
 
 .list-lines__item {
@@ -27,17 +26,14 @@
 
 /* Styles pour le bouton de bascule */
 .toggle-stats-button {
-  background-color: #333;
+  background-color: #fff;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 .toggle-stats-button:hover {
-  background-color: #555;
+  background-color: #fff;
 }
 
 /* Styles pour les lignes */

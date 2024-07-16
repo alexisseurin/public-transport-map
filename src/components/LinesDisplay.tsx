@@ -1,5 +1,7 @@
 import React from 'react';
 import './LinesDisplay.css';
+import upArrow from "../assets/controls/up.svg";
+import downArrow from "../assets/controls/down.svg";
 
 interface LinesDisplayProps {
   isLineDisplayVisible: boolean;
@@ -101,7 +103,7 @@ const LinesDisplay: React.FC<LinesDisplayProps> = ({ isLineDisplayVisible, toggl
         </div>
       )}
       <button className="toggle-stats-button" onClick={toggleStatsVisibility}>
-        {isLineDisplayVisible ? '↓' : '↑'}
+          <img src={isLineDisplayVisible ? downArrow : upArrow} alt="toggle arrow" />
       </button>
     </div>
   );

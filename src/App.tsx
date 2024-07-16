@@ -16,8 +16,8 @@ function App() {
   const [stops, setStops] = useState<StopData[]>([]);
   const [trains, setTrains] = useState<TrainData[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isLineDisplayVisible, setisLineDisplayVisible] = useState(true);
-
+  const [isLineDisplayVisible, setisLineDisplayVisible] = useState(false);
+  
   useEffect(() => {
     Promise.all([
       fetch('data/gtfs-routes-production.json').then(response => response.json()),
