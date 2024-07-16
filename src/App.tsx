@@ -9,12 +9,14 @@ import routePlaceholder from "./assets/road.svg";
 import './components/Icon.css';
 import './components/StatCounter.css';
 import { RouteData, StopData, TrainData } from './types';
+import LinesDisplay from './components/LinesDisplay';
 
 function App() {
   const [routes, setRoutes] = useState<RouteData[]>([]);
   const [stops, setStops] = useState<StopData[]>([]);
   const [trains, setTrains] = useState<TrainData[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isLineDisplayVisible, setisLineDisplayVisible] = useState(true);
 
   useEffect(() => {
     Promise.all([
@@ -85,6 +87,10 @@ function App() {
         trainCount: totalTrains
       };
     }, [routes, stops, trains]);
+
+    const toggleStatsVisibility = () => {
+      setisLineDisplayVisible(!isLineDisplayVisible);
+    };
   
     return (
       <div className="app-container">
@@ -96,6 +102,10 @@ function App() {
           <StatCounter icon={stopPlaceholder} label="stops" count={stopCount} />
           <StatCounter icon={trainPlaceholder} label="trains" count={trainCount} />
         </div>
+        <LinesDisplay 
+          isLineDisplayVisible={isLineDisplayVisible}
+          toggleStatsVisibility={toggleStatsVisibility} 
+        />
         {isLoaded && <Map routes={routes} stops={stops} trains={trains} />}
       </div>
     );

@@ -1,0 +1,127 @@
+
+/* Ajout des styles pour les lignes du métro */
+.list-lines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  padding-bottom: 10px;
+}
+
+.list-lines__item {
+  display: flex;
+}
+
+.line--big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  border-radius:.2em;
+}
+
+/* Styles pour le bouton de bascule */
+.toggle-stats-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.toggle-stats-button:hover {
+  background-color: #555;
+}
+
+/* Styles pour les lignes */
+.line {
+  border-radius: 0.2em;
+}
+
+/* Styles pour les lignes de métro */
+.line-1 { background: rgb(181, 55, 140); color: white; }
+.line-2 { background: rgb(237, 108, 35); color: white; }
+.line-5 { background: rgb(246, 169, 11); color: white; }
+.line-6 { background: rgb(0, 102, 163); color: white; }
+
+/* Styles pour les lignes de tram */
+.line-3 { background: rgb(180, 189, 16); color: black; }
+.line-4 { background: rgb(234, 79, 128); color: black; }
+.line-7 { background: rgb(239, 224, 72); color: black; }
+.line-8 { background: rgb(22, 159, 219); color: white; }
+.line-9 { background: rgb(196, 79, 151); color: white; }
+.line-18 { background: rgb(145, 190, 231); color: black; }
+.line-19 { background: rgb(228, 60, 46); color: white; }
+.line-25 { background: rgb(161, 41, 68); color: white; }
+.line-39 { background: rgb(228, 60, 46); color: white; }
+.line-44 { background: rgb(243, 195, 0); color: black; }
+.line-51 { background: rgb(243, 195, 0); color: black; }
+.line-55 { background: rgb(243, 195, 0); color: black; }
+.line-62 { background: rgb(242, 157, 195); color: black; }
+.line-81 { background: rgb(76, 139, 51); color: white; }
+.line-82 { background: rgb(145, 190, 231); color: black; }
+.line-92 { background: rgb(228, 60, 46); color: white; }
+.line-93 { background: rgb(237, 120, 7); color: white; }
+.line-97 { background: rgb(161, 41, 68); color: white; }
+
+/* Styles pour les lignes de bus */
+.line-12 { background: rgb(76, 139, 51); color: white; }
+.line-13 { background: rgb(145, 190, 231); color: black; }
+.line-14 { background: rgb(242, 157, 195); color: black; }
+.line-17 { background: rgb(228, 60, 46); color: white; }
+.line-20 { background: rgb(243, 195, 0); color: black; }
+.line-21 { background: rgb(255, 220, 1); color: black; }
+.line-27 { background: rgb(145, 190, 231); color: black; }
+.line-28 { background: rgb(228, 60, 46); color: white; }
+.line-29 { background: rgb(237, 120, 7); color: white; }
+.line-33 { background: rgb(242, 157, 195); color: black; }
+.line-34 { background: rgb(243, 195, 0); color: black; }
+.line-36 { background: rgb(145, 190, 231); color: black; }
+.line-37 { background: rgb(48, 97, 150); color: white; }
+.line-38 { background: rgb(166, 124, 176); color: white; }
+.line-41 { background: rgb(145, 190, 231); color: black; }
+.line-42 { background: rgb(76, 139, 51); color: white; }
+.line-43 { background: rgb(155, 96, 24); color: white; }
+.line-45 { background: rgb(166, 124, 176); color: white; }
+.line-46 { background: rgb(228, 60, 46); color: white; }
+.line-47 { background: rgb(166, 124, 176); color: white; }
+.line-48 { background: rgb(237, 120, 7); color: white; }
+.line-49 { background: rgb(48, 97, 150); color: white; }
+.line-50 { background: rgb(180, 189, 16); color: black; }
+.line-52 { background: rgb(255, 220, 1); color: black; }
+.line-53 { background: rgb(76, 139, 51); color: white; }
+.line-54 { background: rgb(228, 60, 46); color: white; }
+.line-56 { background: rgb(237, 120, 7); color: white; }
+.line-57 { background: rgb(228, 60, 46); color: white; }
+.line-58 { background: rgb(76, 139, 51); color: white; }
+.line-59 { background: rgb(155, 96, 24); color: white; }
+.line-60 { background: rgb(242, 157, 195); color: black; }
+.line-61 { background: rgb(255, 220, 1); color: black; }
+.line-63 { background: rgb(145, 190, 231); color: black; }
+.line-64 { background: rgb(228, 60, 46); color: white; }
+.line-65 { background: rgb(243, 195, 0); color: black; }
+.line-66 { background: rgb(48, 97, 150); color: white; }
+.line-69 { background: rgb(237, 120, 7); color: white; }
+.line-71 { background: rgb(76, 139, 51); color: white; }
+.line-72 { background: rgb(242, 157, 195); color: black; }
+.line-73 { background: rgb(242, 157, 195); color: black; }
+.line-74 { background: rgb(166, 124, 176); color: white; }
+.line-75 { background: rgb(255, 220, 1); color: black; }
+.line-76 { background: rgb(255, 220, 1); color: black; }
+.line-77 { background: rgb(76, 139, 51); color: white; }
+.line-78 { background: rgb(166, 124, 176); color: white; }
+.line-79 { background: rgb(48, 97, 150); color: white; }
+.line-80 { background: rgb(76, 139, 51); color: white; }
+.line-83 { background: rgb(180, 189, 16); color: black; }
+.line-86 { background: rgb(48, 97, 150); color: white; }
+.line-87 { background: rgb(76, 139, 51); color: white; }
+.line-88 { background: rgb(161, 41, 68); color: white; }
+.line-89 { background: rgb(180, 189, 16); color: black; }
+.line-95 { background: rgb(48, 97, 150); color: white; }
