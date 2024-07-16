@@ -39,24 +39,37 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   console.log('Routes in Map component:', routes);
   console.log('Trains in Map component:', trains);
 
-  const tramRoutes = routes.map((route, index) => {
-    const coordinates = route.shape.geometry.coordinates.flat().map(
-      (coord: [number, number]) => [coord[1], coord[0]] as LatLngExpression
-    );
-    console.log(`Route ${route.route_id} coordinates:`, coordinates);
 
-    return (
-      <Polyline
-        key={index}
-        positions={coordinates}
-        color={`#${route.route_color}`}
-        weight={5}
-        opacity={0.7}
-        lineJoin="round"
-        lineCap="round"
-      />
-    );
+  const isStraightLine = (coordinates) => {
+    if (coordinates.length < 3) return true;
+    const [[x1, y1], [x2, y2], [x3, y3]] = coordinates.slice(0, 3);
+    return (y2 - y1) * (x3 - x2) === (y3 - y2) * (x2 - x1);
+  };
+  
+  const tramRoutes = routes
+  //.filter(route => route.route_type == "Subway" && "Tram")
+  .flatMap((route, index) => {
+    return route.shape.geometry.coordinates.map((coords, i) => {
+      const segmentCoordinates = coords.map(
+        (coord: [number, number]) => [coord[1], coord[0]] as LatLngExpression
+      );
+
+      console.log(`Route ${route.route_id} segment ${i} coordinates:`, segmentCoordinates);
+
+      return (
+        <Polyline
+          key={`${index}-${i}`}
+          positions={segmentCoordinates}
+          color={`#${route.route_color}`}
+          weight={5}
+          opacity={0.7}
+          lineJoin="round"
+          lineCap="round"
+        />
+      );
+    });
   });
+
 
   const filteredStops = stops.filter(stop => stop.stop_id.length <= 5);
 
