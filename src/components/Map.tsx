@@ -35,9 +35,9 @@ const interpolatePosition = (start: [number, number], end: [number, number], fra
 };
 
 const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
-  console.log('Stops in Map component:', stops);
-  console.log('Routes in Map component:', routes);
-  console.log('Trains in Map component:', trains);
+  //console.log('Stops in Map component:', stops);
+  //console.log('Routes in Map component:', routes);
+  //console.log('Trains in Map component:', trains);
   
   const tramRoutes = routes
   //.filter(route => route.route_type == "Subway" && "Tram")
@@ -47,7 +47,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         (coord: [number, number]) => [coord[1], coord[0]] as LatLngExpression
       );
 
-      console.log(`Route ${route.route_id} segment ${i} coordinates:`, segmentCoordinates);
+      //console.log(`Route ${route.route_id} segment ${i} coordinates:`, segmentCoordinates);
 
       return (
         <Polyline
@@ -130,9 +130,9 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                   src={trainPlaceholder}
                   alt="Train"
                 />
-                <div className="device-name">Train {train.lineid}</div>
+                <div className="device-name">Train Line {train.lineid}</div>
                 <div className="info-grid">
-                  <div className="info-label">Direction</div>
+                  <div className="info-label">Direction ID</div>
                   <div className="info-value">{position.directionId}</div>
                   <div className="info-label">Point ID</div>
                   <div className="info-value">{position.pointId}</div>
@@ -166,13 +166,20 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
               <div className="popup-content">
                 <img
                   src={stopPlaceholder}
-                  alt={stop.location_type}
+                  alt="Stop"
                 />
+                
                 <div className="device-name">{stop.stop_name}</div>
                 <div className="info-grid">
+                  <div className="info-label">ID</div>
+                  <div className="info-value">{stop.stop_id}</div>
                   <div className="info-label">Type</div>
                   <div className="info-value">{stop.location_type}</div>
-                  <div className="info-label">Station Parent</div>
+                  <div className="info-label">Longitude</div>
+                  <div className="info-value">{stop.stop_coordinates.lon}</div>
+                  <div className="info-label">Latitude</div>
+                  <div className="info-value">{stop.stop_coordinates.lat}</div>
+                  <div className="info-label">Parent Station</div>
                   <div className="info-value">{stop.parent_station}</div>
                 </div>
               </div>

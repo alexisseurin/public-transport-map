@@ -14,25 +14,9 @@ function App() {
   const [routes, setRoutes] = useState<RouteData[]>([]);
   const [stops, setStops] = useState<StopData[]>([]);
   const [trains, setTrains] = useState<TrainData[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded] = useState(false);
 
   useEffect(() => {
-    Promise.all([
-      fetch('data/gtfs-routes-production.json').then(response => response.json()),
-      fetch('data/gtfs-stops-production.json').then(response => response.json()),
-      fetch('data/vehicle-position-rt-production.json').then(response => response.json())
-    ]).then(([routesData, stopsData, trainsData]) => {
-      console.log('Routes, stops, and trains loaded');
-      setRoutes(routesData);
-      setStops(stopsData);
-      setTrains(trainsData);
-      setIsLoaded(true);
-    }).catch(error => {
-      console.error('Error loading data:', error);
-    });
-  }, []);
-
-  /*useEffect(() => {
     fetch('data/gtfs-routes-production.json')
       .then(response => response.json())
       .then(data => {
@@ -69,7 +53,7 @@ function App() {
     const interval = setInterval(fetchTrainData, 20000); // Fetch every 20 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);*/
+  }, []);
 
 
     const { RouteCount, stopCount, trainCount } = useMemo(() => {
@@ -92,9 +76,9 @@ function App() {
           <span>Public transport map</span>
         </div>
         <div className="bottom-left-stats">
-          <StatCounter icon={routePlaceholder} label="routes" count={RouteCount} />
-          <StatCounter icon={stopPlaceholder} label="stops" count={stopCount} />
-          <StatCounter icon={trainPlaceholder} label="trains" count={trainCount} />
+          <StatCounter icon={routePlaceholder} label="Routes" count={RouteCount} />
+          <StatCounter icon={stopPlaceholder} label="Stops" count={stopCount} />
+          <StatCounter icon={trainPlaceholder} label="Trains" count={trainCount} />
         </div>
         {isLoaded && <Map routes={routes} stops={stops} trains={trains} />}
       </div>
