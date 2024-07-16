@@ -4,6 +4,7 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import { trainIcon, stopIcon } from "./Icon";
 import stopPlaceholder from "../assets/stop.svg";
 import trainPlaceholder from "../assets/train.svg";
+import informationPlaceholder from "../assets/information.svg"
 import { StopData, RouteData, TrainData } from '../types';
 import "./Map.css";
 import { divIcon, point, LatLngExpression } from "leaflet";
@@ -151,10 +152,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
 
   return (
     <MapContainer className="map-container" center={[50.84045, 4.34878]} zoom={13}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles courtesy of Humanitarian OpenStreetMap Team (HOT)'
-        url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-      />
+      <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />
       <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
         {stops.map((stop, index) => (
           <Marker
@@ -189,6 +187,26 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         {tramRoutes}
       </MarkerClusterGroup>
       {trainMarkers}
+
+      <div className="leaflet-top leaflet-right">
+        <div className="leaflet-control-info leaflet-control">
+          <button id="infoButton" title="Map Information">
+            <img src={informationPlaceholder} alt="Information"/>
+          </button>
+          <div id="infoTooltip" className="leaflet-info-tooltip">
+            <a href="https://leafletjs.com" title="A JavaScript library for interactive maps">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" className="leaflet-attribution-flag">
+                <path fill="#4C7BE1" d="M0 0h12v4H0z"></path>
+                <path fill="#FFD500" d="M0 4h12v3H0z"></path>
+                <path fill="#E0BC00" d="M0 7h12v1H0z"></path>
+              </svg> Leaflet
+            </a>
+            <span aria-hidden="true">|</span> © 
+            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles courtesy of Humanitarian OpenStreetMap Team (HOT)
+          </div>
+        </div>
+      </div>
+
     </MapContainer>
   );
 };

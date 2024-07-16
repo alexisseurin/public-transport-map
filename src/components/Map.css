@@ -9,7 +9,6 @@
 
 .leaflet-popup-content,
 .leaflet-tooltip,
-.leaflet-control-attribution,
 .leaflet-control-layers label {
   font-family: 'Noto Sans', sans-serif !important;
   font-weight: 400;
@@ -47,6 +46,55 @@
 .leaflet-control-zoom-in:hover,
 .leaflet-control-zoom-out:hover {
   background-color: #555;
+}
+
+.leaflet-control-info {
+  border: transparent !important;
+}
+
+#infoButton {
+  background-color: #fff !important;
+  color: transparent !important; 
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  margin: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/controls/info.svg'); /* Add your SVG path here */
+}
+
+#infoButton:hover {
+  background-color: #555;
+}
+
+#infoTooltip {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Sans', sans-serif !important;
+  font-weight: 400;
+  z-index: 1000;
+}
+
+#infoButton:hover + #infoTooltip,
+#infoTooltip:hover {
+  display: block;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
 }
 
 .custom-marker-cluster {
