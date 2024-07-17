@@ -6,7 +6,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 .leaflet-popup-content,
 .leaflet-tooltip,
 .leaflet-control-layers label {
@@ -198,6 +197,64 @@
   font-style: italic;
 }
 
+.lines-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.titles {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.rows {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.titles h4 {
+  width: 50%;
+  text-align: center;
+}
+
+.list-columns {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center; /* Center horizontally */
+  width: 70%;
+}
+
+.list-columns__item {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.line-column {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+}
+
+.order-column {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  width: 50%;
+  text-align: center;
+  align-items: center;
+}
+
+
 .info-grid {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -243,4 +300,3 @@
     transform: scale(1);
   }
 }
-

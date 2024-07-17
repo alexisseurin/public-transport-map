@@ -28,6 +28,7 @@ export interface RouteData {
 }
 
 export interface StopData {
+  ordersAndLineIds: any;
   stop_id: string;
   stop_code: string | null;
   stop_name: {

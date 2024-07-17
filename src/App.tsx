@@ -32,24 +32,22 @@ function App() {
         const stopDetails = stopDetailsData.find((detail: { id: string; name: string; }) => detail.id === stop.stop_id);
         const stopName = stopDetails ? JSON.parse(stopDetails.name.replace(/\\/g, '')) : { fr: stop.stop_name, nl: stop.stop_name };
         
-        let order = null;
-        let lineid = null;
+        let ordersAndLineIds: { order: any; lineid: string; }[] = [];
         stopsByLineData.forEach((line: { lineid: string, points: string }) => {
-          const points = JSON.parse(line.points);
-          const stopPoint = points.find((point: { id: string; order: number }) => point.id === stop.stop_id);
-          if (stopPoint) {
-            order = stopPoint.order;
-            lineid = line.lineid;
-          }
+            const points = JSON.parse(line.points);
+            const stopPoint = points.find((point: { id: string; order: number }) => point.id === stop.stop_id);
+            if (stopPoint) {
+                ordersAndLineIds.push({ order: stopPoint.order, lineid: line.lineid });
+            }
         });
-  
+    
         return {
-          ...stop,
-          stop_name: stopName,
-          order: order,
-          lineid: lineid
+            ...stop,
+            stop_name: stopName,
+            ordersAndLineIds: ordersAndLineIds
         };
-      });
+    });
+    
   
       setRoutes(routesData);
       setStops(combinedStopsData); 

@@ -186,21 +186,29 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                 </div>
 
                 <div className="lines-section">
-                    <h4>Line</h4>
-                    <div className="list-lines">
-                      <div className="list-lines__item">
-                      <div className={`line line--big line-${stop.lineid}`}>
-                      {stop.lineid}
+                  <div className="list-columns">
+                    <div className="titles">
+                      <h4>Line</h4>
+                      <h4>Order</h4>
                     </div>
+                    {stop.ordersAndLineIds.map((line: any, index: any) => (
+                      <div key={index} className="list-columns__item">
+                        <div className="rows">
+                        <div className={`line-column line--big line-${line.lineid}`}>
+                          {line.lineid}
                         </div>
-                    </div>
+                        </div>
+                        <div className="rows">
+                        <div className="order-column">
+                          {line.order}
+                        </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
                 
                 <div className="info-grid">
-
-                  
-                  <div className="info-label">Order</div>
-                  <div className="info-value">{stop.order}</div>
                   <div className="info-label">Type</div>
                   <div className="info-value">{stop.location_type}</div>
                   <div className="info-label">ID</div>
