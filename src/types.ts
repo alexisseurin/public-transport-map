@@ -30,7 +30,10 @@ export interface RouteData {
 export interface StopData {
   stop_id: string;
   stop_code: string | null;
-  stop_name: string;
+  stop_name: {
+    fr: string;
+    nl: string;
+  };
   stop_coordinates: {
     lon: number;
     lat: number;

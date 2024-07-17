@@ -167,7 +167,10 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                   alt="Stop"
                 />
                 
-                <div className="device-name">{stop.stop_name}</div>
+                <div className="device-name">
+                  🇫🇷 {stop.stop_name.fr}
+                  🇳🇱 {stop.stop_name.nl}
+                </div>
                 <div className="info-grid">
                   <div className="info-label">ID</div>
                   <div className="info-value">{stop.stop_id}</div>

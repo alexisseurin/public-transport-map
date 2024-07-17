@@ -22,9 +22,21 @@ function App() {
     Promise.all([
       fetch('data/gtfs-routes-production.json').then(response => response.json()),
       fetch('data/gtfs-stops-production.json').then(response => response.json()),
-      fetch('data/vehicle-position-rt-production.json').then(response => response.json())
-    ]).then(([routesData, stopsData, trainsData]) => {
+      fetch('data/vehicle-position-rt-production.json').then(response => response.json()),
+      fetch('data/stop-details-production.json').then(response => response.json())
+    ]).then(([routesData, stopsData, trainsData, stopDetailsData]) => {
       console.log('Routes, stops, and trains loaded');
+
+      const combinedStopsData = stopsData.map((stop: { stop_id: string; stop_name: string; }) => {
+        const stopDetails = stopDetailsData.find((detail: { id: string; name: string; }) => detail.id === stop.stop_id);
+        return {
+          ...stop,
+          stop_name: stopDetails ? JSON.parse(stopDetails.name.replace(/\\/g, '')) : { fr: stop.stop_name, nl: stop.stop_name }
+        };
+      });
+
+      stopsData = combinedStopsData;
+
       setRoutes(routesData);
       setStops(stopsData);
       setTrains(trainsData);
@@ -33,6 +45,8 @@ function App() {
       console.error('Error loading data:', error);
     });
   }, []);
+
+  
 
   /*useEffect(() => {
     fetch('data/gtfs-routes-production.json')
