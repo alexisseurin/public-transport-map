@@ -168,9 +168,12 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                 />
                 
                 <div className="device-name">
-                  🇫🇷 {stop.stop_name.fr}
-                  🇳🇱 {stop.stop_name.nl}
+                  {stop.stop_name.fr}
+                  <div className="device-name italic">
+                    {stop.stop_name.fr === stop.stop_name.nl ? null : stop.stop_name.nl}
+                  </div>
                 </div>
+                
                 <div className="info-grid">
                   <div className="info-label">ID</div>
                   <div className="info-value">{stop.stop_id}</div>

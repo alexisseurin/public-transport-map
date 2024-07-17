@@ -187,8 +187,15 @@
   font-size: 22px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 15px;
   color: #007bff;
+}
+
+.italic {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: #007bff;
+  font-style: italic;
 }
 
 .info-grid {
@@ -236,3 +243,4 @@
     transform: scale(1);
   }
 }
+
