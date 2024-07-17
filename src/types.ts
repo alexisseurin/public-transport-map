@@ -34,6 +34,8 @@ export interface StopData {
     fr: string;
     nl: string;
   };
+  order: number | null;
+  lineid: string | null;
   stop_coordinates: {
     lon: number;
     lat: number;

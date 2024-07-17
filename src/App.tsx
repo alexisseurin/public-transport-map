@@ -23,28 +23,43 @@ function App() {
       fetch('data/gtfs-routes-production.json').then(response => response.json()),
       fetch('data/gtfs-stops-production.json').then(response => response.json()),
       fetch('data/vehicle-position-rt-production.json').then(response => response.json()),
-      fetch('data/stop-details-production.json').then(response => response.json())
-    ]).then(([routesData, stopsData, trainsData, stopDetailsData]) => {
+      fetch('data/stop-details-production.json').then(response => response.json()),
+      fetch('data/stops-by-line-production.json').then(response => response.json())
+    ]).then(([routesData, stopsData, trainsData, stopDetailsData, stopsByLineData]) => {
       console.log('Routes, stops, and trains loaded');
-
+      
       const combinedStopsData = stopsData.map((stop: { stop_id: string; stop_name: string; }) => {
         const stopDetails = stopDetailsData.find((detail: { id: string; name: string; }) => detail.id === stop.stop_id);
+        const stopName = stopDetails ? JSON.parse(stopDetails.name.replace(/\\/g, '')) : { fr: stop.stop_name, nl: stop.stop_name };
+        
+        let order = null;
+        let lineid = null;
+        stopsByLineData.forEach((line: { lineid: string, points: string }) => {
+          const points = JSON.parse(line.points);
+          const stopPoint = points.find((point: { id: string; order: number }) => point.id === stop.stop_id);
+          if (stopPoint) {
+            order = stopPoint.order;
+            lineid = line.lineid;
+          }
+        });
+  
         return {
           ...stop,
-          stop_name: stopDetails ? JSON.parse(stopDetails.name.replace(/\\/g, '')) : { fr: stop.stop_name, nl: stop.stop_name }
+          stop_name: stopName,
+          order: order,
+          lineid: lineid
         };
       });
-
-      stopsData = combinedStopsData;
-
+  
       setRoutes(routesData);
-      setStops(stopsData);
+      setStops(combinedStopsData); 
       setTrains(trainsData);
       setIsLoaded(true);
     }).catch(error => {
       console.error('Error loading data:', error);
     });
   }, []);
+  
 
   
 

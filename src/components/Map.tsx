@@ -175,10 +175,14 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                 </div>
                 
                 <div className="info-grid">
-                  <div className="info-label">ID</div>
-                  <div className="info-value">{stop.stop_id}</div>
+                  <div className="info-label">Line</div>
+                  <div className="info-value">{stop.lineid}</div>
+                  <div className="info-label">Order</div>
+                  <div className="info-value">{stop.order}</div>
                   <div className="info-label">Type</div>
                   <div className="info-value">{stop.location_type}</div>
+                  <div className="info-label">ID</div>
+                  <div className="info-value">{stop.stop_id}</div>
                   <div className="info-label">Longitude</div>
                   <div className="info-value">{stop.stop_coordinates.lon}</div>
                   <div className="info-label">Latitude</div>
