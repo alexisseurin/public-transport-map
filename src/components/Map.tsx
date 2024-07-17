@@ -7,6 +7,7 @@ import trainPlaceholder from "../assets/train.svg";
 import informationPlaceholder from "../assets/information.svg"
 import { StopData, RouteData, TrainData } from '../types';
 import "./Map.css";
+import './LinesDisplay.css';
 import { divIcon, point, LatLngExpression } from "leaflet";
 
 interface MapProps {
@@ -131,7 +132,17 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                   src={trainPlaceholder}
                   alt="Train"
                 />
-                <div className="device-name">Train Line {train.lineid}</div>
+                <div className="device-name">Train</div>
+                <div className="lines-section">
+                    <h4>Line</h4>
+                    <div className="list-lines">
+                      <div className="list-lines__item">
+                      <div className={`line line--big line-${train.lineid}`}>
+                      {train.lineid}
+                    </div>
+                        </div>
+                    </div>
+                  </div>
                 <div className="info-grid">
                   <div className="info-label">Direction ID</div>
                   <div className="info-value">{position.directionId}</div>
@@ -173,10 +184,21 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                     {stop.stop_name.fr === stop.stop_name.nl ? null : stop.stop_name.nl}
                   </div>
                 </div>
+
+                <div className="lines-section">
+                    <h4>Line</h4>
+                    <div className="list-lines">
+                      <div className="list-lines__item">
+                      <div className={`line line--big line-${stop.lineid}`}>
+                      {stop.lineid}
+                    </div>
+                        </div>
+                    </div>
+                  </div>
                 
                 <div className="info-grid">
-                  <div className="info-label">Line</div>
-                  <div className="info-value">{stop.lineid}</div>
+
+                  
                   <div className="info-label">Order</div>
                   <div className="info-value">{stop.order}</div>
                   <div className="info-label">Type</div>
