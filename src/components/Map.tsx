@@ -1,9 +1,12 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import { trainIcon, stopIcon } from "./Icon";
+import { trainIcon, stopIcon, tramIcon, busIcon, subwayIcon } from "./Icon";
 import stopPlaceholder from "../assets/stop.svg";
 import trainPlaceholder from "../assets/train.svg";
+import subwayPlaceholder from "../assets/subway.svg";
+import tramPlaceholder from "../assets/tram.svg";
+import busPlaceholder from "../assets/bus.svg";
 import informationPlaceholder from "../assets/information.svg"
 import { StopData, RouteData, TrainData } from '../types';
 import "./Map.css";
@@ -15,6 +18,32 @@ interface MapProps {
   routes: RouteData[];
   trains: TrainData[];
 }
+
+const getPlaceholder = (routeType: string) => {
+  switch (routeType) {
+    case 'Subway':
+      return subwayPlaceholder;
+    case 'Tram':
+      return tramPlaceholder;
+    case 'Bus':
+      return busPlaceholder;
+    default:
+      return trainPlaceholder;
+  }
+};
+
+const getIcon = (routeType: string) => {
+  switch (routeType) {
+    case 'Subway':
+      return subwayIcon;
+    case 'Tram':
+      return tramIcon;
+    case 'Bus':
+      return busIcon;
+    default:
+      return trainIcon;
+  }
+};
 
 const createClusterCustomIcon = (cluster: any) => divIcon({
   html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
@@ -89,6 +118,9 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         return [];
       }
 
+      const icon = getIcon(route.route_type);
+      const placeholder = getPlaceholder(route.route_type);
+
       return vehiclePositions.map(position => {
         const nextStop = findStopById(stops, position.pointId);
         if (!nextStop) {
@@ -123,26 +155,32 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           <Marker
             key={`${train.lineid}-${position.pointId}`}
             position={trainPosition}
-            icon={trainIcon}
+            icon={icon}
             zIndexOffset={1000} // Ensure trains are rendered above other markers
           >
             <Popup>
               <div className="popup-content">
                 <img
-                  src={trainPlaceholder}
-                  alt="Train"
+                  src={placeholder}
+                  alt={route.route_type}
                 />
-                <div className="device-name">Train</div>
+                <div className="device-name">{route.route_type}</div>
                 <div className="lines-section">
-                    <h4>Line</h4>
-                    <div className="list-lines">
-                      <div className="list-lines__item">
-                      <div className={`line line--big line-${train.lineid}`}>
-                      {train.lineid}
+                  <div className="list-columns">
+                    <div className="titles">
+                      <h4>Line</h4>
                     </div>
+                      <div className="list-columns__item">
+                        <div className="rows">
+                        <div className={`line-column line--big line-${train.lineid}`}>
+                          {train.lineid}
                         </div>
-                    </div>
+                        </div>
+                      </div>
+                   
                   </div>
+                </div>
+               
                 <div className="info-grid">
                   <div className="info-label">Direction ID</div>
                   <div className="info-value">{position.directionId}</div>
