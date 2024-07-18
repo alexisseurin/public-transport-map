@@ -70,9 +70,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   //console.log('Routes in Map component:', routes);
   //console.log('Trains in Map component:', trains);
   
-  const tramRoutes = routes
-  //.filter(route => route.route_type == "Subway" && "Tram")
-  .flatMap((route, index) => {
+  const tramRoutes = routes.flatMap((route, index) => {
     return route.shape.geometry.coordinates.map((coords, i) => {
       const segmentCoordinates = coords.map(
         (coord: [number, number]) => [coord[1], coord[0]] as LatLngExpression
@@ -156,7 +154,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
             key={`${train.lineid}-${position.pointId}`}
             position={trainPosition}
             icon={icon}
-            zIndexOffset={1000} // Ensure trains are rendered above other markers
+            zIndexOffset={1000}
           >
             <Popup>
               <div className="popup-content">
@@ -164,22 +162,26 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                   src={placeholder}
                   alt={route.route_type}
                 />
+                
                 <div className="device-name">{route.route_type}</div>
+                {train.lineid && (
+                    <>
                 <div className="lines-section">
                   <div className="list-columns">
-                    <div className="titles">
-                      <h4>Line</h4>
-                    </div>
+                      <div className="titles">
+                        <h4>Line</h4>
+                      </div>
                       <div className="list-columns__item">
                         <div className="rows">
-                        <div className={`line-column line--big line-${train.lineid}`}>
-                          {train.lineid}
+                        <div className={`line-column line--big line-${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}`}>
+                        {train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}
                         </div>
                         </div>
                       </div>
-                   
                   </div>
                 </div>
+                </>
+                )}
                
                 <div className="info-grid">
                   <div className="info-label">Direction ID</div>
@@ -217,46 +219,73 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                 />
                 
                 <div className="device-name">
-                  {stop.stop_name.fr}
+                  {stop.stop_name.fr} 
                   <div className="device-name italic">
                     {stop.stop_name.fr === stop.stop_name.nl ? null : stop.stop_name.nl}
                   </div>
                 </div>
 
-                <div className="lines-section">
-                  <div className="list-columns">
-                    <div className="titles">
-                      <h4>Line</h4>
-                      <h4>Order</h4>
-                    </div>
-                    {stop.ordersAndLineIds.map((line: any, index: any) => (
-                      <div key={index} className="list-columns__item">
-                        <div className="rows">
-                        <div className={`line-column line--big line-${line.lineid}`}>
-                          {line.lineid}
+                {stop.stop_id && (
+                <>
+                  {stop.ordersAndLineIds.some((line: any) => line.lineid || line.order) && (
+                    <div className="lines-section">
+                      <div className="list-columns">
+                        <div className="titles">
+                          {stop.ordersAndLineIds.some((line: any) => line.lineid) && <h4>Line</h4>}
+                          {stop.ordersAndLineIds.some((line: any) => line.order) && <h4>Order</h4>}
                         </div>
-                        </div>
-                        <div className="rows">
-                        <div className="order-column">
-                          {line.order}
-                        </div>
-                        </div>
+                        {stop.ordersAndLineIds.map((line: any, index: any) => (
+                          (line.lineid || line.order) && (
+                            <div key={index} className="list-columns__item">
+                              <div className="rows">
+                                {line.lineid && (
+                                  <div className={`line-column line--big line-${line.lineid.startsWith('T') || line.lineid.startsWith('M') ? line.lineid.slice(1) : line.lineid}`}>
+                                    {line.lineid.startsWith('T') || line.lineid.startsWith('M') ? line.lineid.slice(1) : line.lineid}
+                                  </div>
+                                )}
+                              </div>
+                              <div className="rows">
+                                {line.order && (
+                                  <div className="order-column">
+                                    {line.order}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          )
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    </div>
+                  )}
+                </>
+              )}
+
                 
                 <div className="info-grid">
-                  <div className="info-label">Type</div>
-                  <div className="info-value">{stop.location_type}</div>
-                  <div className="info-label">ID</div>
-                  <div className="info-value">{stop.stop_id}</div>
-                  <div className="info-label">Longitude</div>
-                  <div className="info-value">{stop.stop_coordinates.lon}</div>
-                  <div className="info-label">Latitude</div>
-                  <div className="info-value">{stop.stop_coordinates.lat}</div>
-                  <div className="info-label">Parent Station</div>
-                  <div className="info-value">{stop.parent_station}</div>
+                  {stop.stop_id && (
+                    <>
+                      <div className="info-label">ID</div>
+                      <div className="info-value">{stop.stop_id}</div>
+                    </>
+                  )}
+                  {stop.stop_coordinates.lon && (
+                    <>
+                      <div className="info-label">Longitude</div>
+                      <div className="info-value">{stop.stop_coordinates.lon}</div>
+                    </>
+                  )}
+                  {stop.stop_coordinates.lat && (
+                    <>
+                      <div className="info-label">Latitude</div>
+                      <div className="info-value">{stop.stop_coordinates.lat}</div>
+                    </>
+                  )}
+                  {stop.parent_station && (
+                    <>
+                      <div className="info-label">Parent Station</div>
+                      <div className="info-value">{stop.parent_station}</div>
+                    </>
+                  )}
                 </div>
               </div>
             </Popup>

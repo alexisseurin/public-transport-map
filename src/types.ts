@@ -36,7 +36,7 @@ export interface StopData {
     nl: string;
   };
   order: number | null;
-  lineid: string | null;
+  lineid: string;
   stop_coordinates: {
     lon: number;
     lat: number;
