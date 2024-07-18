@@ -11,7 +11,7 @@ import informationPlaceholder from "../assets/information.svg"
 import { StopData, RouteData, TrainData } from '../types';
 import "./Map.css";
 import './LinesDisplay.css';
-import { divIcon, point, LatLngExpression } from "leaflet";
+import { divIcon, point, LatLngExpression, LatLngLiteral, LatLngTuple } from "leaflet";
 
 interface MapProps {
   stops: StopData[];
@@ -143,16 +143,20 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         }
 
         const fraction = position.distanceFromPoint / totalDistance;
-        const trainPosition = interpolatePosition(
-          [startStop.stop_coordinates.lat, startStop.stop_coordinates.lon],
-          [nextStop.stop_coordinates.lat, nextStop.stop_coordinates.lon],
+        const trainPosition: number[] | LatLngLiteral | LatLngTuple = [
+          startStop.stop_coordinates.lat,
+          startStop.stop_coordinates.lon,
+          nextStop.stop_coordinates.lat,
+          nextStop.stop_coordinates.lon,
           fraction
-        );
+        ];
 
+        
         return (
+          <>
           <Marker
             key={`${train.lineid}-${position.pointId}`}
-            position={trainPosition}
+            position={[trainPosition[0], trainPosition[1]]}
             icon={icon}
             zIndexOffset={1000}
           >
@@ -194,6 +198,13 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
               </div>
             </Popup>
           </Marker>
+          <Marker
+            key={`${train.lineid}-${position.pointId}-small`}
+            position={[trainPosition[0] - 0.0001, trainPosition[1] + 0.0001]}
+            zIndexOffset={1000}
+            icon={tramIcon}
+          />
+          </>
         );
       }).filter(Boolean);
     });

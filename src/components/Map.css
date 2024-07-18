@@ -51,6 +51,12 @@
   border: transparent !important;
 }
 
+.line-id {
+  text-align: center !important;
+  font-weight: bold !important;
+  margin-bottom: 5px !important;
+}
+
 #infoButton {
   background-color: #fff !important;
   color: transparent !important; 
