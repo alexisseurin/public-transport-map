@@ -125,9 +125,9 @@ function App() {
           <span>Public transport map</span>
         </div>
         <div className="bottom-left-stats">
-          <StatCounter icon={routePlaceholder} label="routes" count={RouteCount} />
+          <StatCounter icon={routePlaceholder} label="lines" count={RouteCount} />
           <StatCounter icon={stopPlaceholder} label="stops" count={stopCount} />
-          <StatCounter icon={trainPlaceholder} label="trains" count={trainCount} />
+          <StatCounter icon={trainPlaceholder} label="trams, subways and buses" count={trainCount} />
         </div>
         <LinesDisplay 
           isLineDisplayVisible={isLineDisplayVisible}

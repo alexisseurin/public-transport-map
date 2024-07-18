@@ -12,6 +12,7 @@ import { StopData, RouteData, TrainData } from '../types';
 import "./Map.css";
 import './LinesDisplay.css';
 import { divIcon, point, LatLngExpression, LatLngLiteral, LatLngTuple } from "leaflet";
+import L from "leaflet";
 
 interface MapProps {
   stops: StopData[];
@@ -151,15 +152,76 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           fraction
         ];
 
+        const createCustomIcon = (lineid: string, route_type: string) => {
+          const imageSrc = getPlaceholder(route_type);
+
+          return L.divIcon({
+            html: `<div style="position: relative; display: inline-block;   background-color: #fff !important;
+  color: transparent !important; 
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  margin: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Noto Sans', sans-serif !important;">
+                     <img src="${imageSrc}" style="width: 38px; height: 38px;" />
+                     <div style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; color: white; font-weight: bold;">
+                    <div className="list-columns__item">
+                        <div className="rows">
+                        <div style="  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  border-radius:.2em;" className="line-column line--big line-${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}"}>
+                        ${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}
+                      </div>
+                        </div>
+                      </div>
+                     </div>
+
+                   </div>`,
+            });
+        };
+
         
         return (
           <>
           <Marker
             key={`${train.lineid}-${position.pointId}`}
             position={[trainPosition[0], trainPosition[1]]}
-            icon={icon}
+            icon={createCustomIcon(train.lineid, route.route_type)}
             zIndexOffset={1000}
           >
+
+            {train.lineid && (
+                    <>
+                <div className="lines-section">
+                  <div className="list-columns">
+                      <div className="titles">
+                        <h4>Line</h4>
+                      </div>
+                      <div className="list-columns__item">
+                        <div className="rows">
+                        <div className={`line-column line--big line-${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}`}>
+                        {train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}
+                        </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                </>
+                )}
             <Popup>
               <div className="popup-content">
                 <img
@@ -198,12 +260,6 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
               </div>
             </Popup>
           </Marker>
-          <Marker
-            key={`${train.lineid}-${position.pointId}-small`}
-            position={[trainPosition[0] - 0.0001, trainPosition[1] + 0.0001]}
-            zIndexOffset={1000}
-            icon={tramIcon}
-          />
           </>
         );
       }).filter(Boolean);
