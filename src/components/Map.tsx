@@ -222,6 +222,29 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
 
   const trainMarkers = calculateTrainPositions();
 
+  const createStopCustomIcon = (stop: StopData) => {
+    const uniqueLines = [...new Set(stop.ordersAndLineIds.map((line: { lineid: any; }) => line.lineid).filter(Boolean))];
+    const lineIcons = uniqueLines.map((lineId: any) => `
+      <div class="line-column line--big line-${lineId.startsWith('T') || lineId.startsWith('M') ? lineId.slice(1) : lineId}" style="margin-bottom: 5px;">
+        ${lineId.startsWith('T') || lineId.startsWith('M') ? lineId.slice(1) : lineId}
+      </div>
+    `).join('');
+  
+    return L.divIcon({
+      html: `
+        <div class="custom-icon-wrapper">
+          <img src="${stopPlaceholder}" class="custom-icon-img" />
+          <div class="custom-icon-label">
+            ${lineIcons}
+          </div>
+        </div>
+      `,
+      className: "custom-stop-icon",
+      iconSize: point(35, 35, true)
+    });
+  };
+  
+
   return (
     <MapContainer className="map-container" center={[50.84045, 4.34878]} zoom={13}>
       <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />
@@ -230,7 +253,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           <Marker
             key={index}
             position={[stop.stop_coordinates.lat, stop.stop_coordinates.lon]}
-            icon={stopIcon}
+            icon={createStopCustomIcon(stop)}
           >
             <Popup>
               <div className="popup-content">

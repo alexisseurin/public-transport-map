@@ -340,13 +340,18 @@
   position: absolute; 
   bottom: 25px;
   left: 20px; 
-  width: 25px;
-  height: 25px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background: transparent;
   border-radius: 12px !important;
   color: white; 
   font-weight: bold;
+  white-space: nowrap;
+}
+
+.custom-icon-label .line-column {
+  transform: translateX(-50%);
+  margin-right: 1px;
 }
