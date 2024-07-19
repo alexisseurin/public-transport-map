@@ -151,6 +151,11 @@
   box-shadow: none !important;
 }
 
+.leaflet-marker-icon.leaflet-div-icon.leaflet-zoom-animated.leaflet-interactive {
+  width: 0px !important;
+  height: 0px !important;
+}
+
 .leaflet-popup-content {
   display: flex;
   flex-direction: column;
