@@ -157,44 +157,14 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
 
           return L.divIcon({
             html: `
-              <div style="
-                position: relative; 
-                display: inline-block; 
-                background-color: #fff !important;
-                color: transparent !important; 
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 12px !important;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                cursor: pointer;
-                margin: 4px;
-                background-repeat: no-repeat;
-                background-position: center;
-                font-family: 'Noto Sans', sans-serif !important;">
-                <img src="${imageSrc}" style="width: 38px; height: 38px;" />
-                <div style="
-                  position: absolute; 
-                  bottom: 25px;
-                  left: 20px; 
-                  width: 25px;
-                  height: 25px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  background: transparent;
-                  border-radius: 12px !important;
-                  color: white; 
-                  font-weight: bold;">
+              <div class="custom-icon-wrapper">
+                <img src="${imageSrc}" class="custom-icon-img" />
+                <div class="custom-icon-label">
                   <div class="line--big line-${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}">
                     ${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}
                   </div>
-          
               </div>`,
           });
-
         };
 
         
@@ -203,7 +173,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           <Marker
             key={`${train.lineid}-${position.pointId}`}
             position={[trainPosition[0], trainPosition[1]]}
-            icon={createCustomIcon(train.lineid, route.route_type)}
+            icon={createCustomIcon(route.route_type)}
             zIndexOffset={1000}
           >
             <Popup>
