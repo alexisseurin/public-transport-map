@@ -94,9 +94,9 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   });
 
 
-  //const filteredStops = stops.filter(stop => stop.stop_id.length <= 5);
-
   const calculateTrainPositions = () => {
+    const uniqueTrainPositions = new Set();
+
     return trains.flatMap(train => {
       const route = findRouteById(routes, train.lineid);
       if (!route) {
@@ -116,7 +116,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         console.error(`Vehicle positions are not an array for train lineid: ${train.lineid}`, vehiclePositions);
         return [];
       }
-
+      
       const icon = getIcon(route.route_type);
       const placeholder = getPlaceholder(route.route_type);
 
@@ -144,17 +144,21 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         }
 
         const fraction = position.distanceFromPoint / totalDistance;
-        const trainPosition: number[] | LatLngLiteral | LatLngTuple = [
-          startStop.stop_coordinates.lat,
-          startStop.stop_coordinates.lon,
-          nextStop.stop_coordinates.lat,
-          nextStop.stop_coordinates.lon,
+        const trainPosition = interpolatePosition(
+          [startStop.stop_coordinates.lat, startStop.stop_coordinates.lon],
+          [nextStop.stop_coordinates.lat, nextStop.stop_coordinates.lon],
           fraction
-        ];
+        );
+
+        const positionKey = `${trainPosition[0]},${trainPosition[1]},${train.lineid}`;
+        if (uniqueTrainPositions.has(positionKey)) {
+          return null;
+        }
+        uniqueTrainPositions.add(positionKey);
 
         const createCustomIcon = (route_type: string) => {
           const imageSrc = getPlaceholder(route_type);
-
+  
           return L.divIcon({
             html: `
               <div class="custom-icon-wrapper">
@@ -163,7 +167,9 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                   <div class="line--big line-${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}">
                     ${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}
                   </div>
-              </div>`,
+                </div>
+              </div>
+            `,
           });
         };
 
@@ -172,7 +178,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           <>
           <Marker
             key={`${train.lineid}-${position.pointId}`}
-            position={[trainPosition[0], trainPosition[1]]}
+            position={trainPosition}
             icon={createCustomIcon(route.route_type)}
             zIndexOffset={1000}
           >
@@ -193,9 +199,9 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
                       </div>
                       <div className="list-columns__item">
                         <div className="rows">
-                        <div className={`line-column line--big line-${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}`}>
-                        {train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}
-                        </div>
+                          <div className={`line-column line--big line-${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}`}>
+                            {train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}
+                          </div>
                         </div>
                       </div>
                   </div>

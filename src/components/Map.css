@@ -315,20 +315,19 @@
 .custom-icon-wrapper {
   position: relative; 
   display: inline-block; 
-  background-color: #fff !important;
-  color: transparent !important; 
+  background-color: #fff;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px !important;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   margin: 4px;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: 'Noto Sans', sans-serif !important;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .custom-icon-img {
