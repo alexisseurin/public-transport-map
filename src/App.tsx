@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useCallback } from 'react';
 import './App.css';
 import "leaflet/dist/leaflet.css";
 import Map from "./components/Map";
@@ -17,6 +17,10 @@ function App() {
   const [trains, setTrains] = useState<TrainData[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLineDisplayVisible, setisLineDisplayVisible] = useState(false);
+
+  const updateTrainPositions = useCallback((newTrains: TrainData[]) => {
+    setTrains(newTrains);
+  }, []);
 
   useEffect(() => {
 
@@ -53,36 +57,11 @@ function App() {
   
       setRoutes(routesData);
       setStops(combinedStopsData); 
-      setTrains(trainsData);
+      updateTrainPositions(trainsData);
       setIsLoaded(true);
     }).catch(error => {
       console.error('Error loading data:', error);
     });
-  }, []);
-  
-
-  
-
-  /*useEffect(() => {
-    fetch('data/gtfs-routes-production.json')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Routes loaded:', data); 
-        setRoutes(data);
-      })
-      .catch(error => {
-        console.error('Error loading routes:', error);
-      });
-
-    fetch('data/gtfs-stops-production.json')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Stops loaded:', data); 
-        setStops(data);
-      })
-      .catch(error => {
-        console.error('Error loading stops:', error);
-      });
 
     const fetchTrainData = () => {
       fetch('data/vehicle-position-rt-production.json')
@@ -100,8 +79,8 @@ function App() {
     const interval = setInterval(fetchTrainData, 20000); // Fetch every 20 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);*/
-
+  }, [updateTrainPositions]);
+  
 
     const { RouteCount, stopCount, trainCount } = useMemo(() => {
       //const tramRoutes = routes.filter(route => route.route_type === 'Tram');

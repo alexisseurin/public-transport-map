@@ -73,6 +73,43 @@ const isInBelgium = (lat: number, lon: number) => {
          lon >= BELGIUM_BOUNDS.minLon && lon <= BELGIUM_BOUNDS.maxLon;
 };
 
+const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
+  const R = 6371000; // Radius of the Earth in meters
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLon = (lon2 - lon1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+};
+
+const interpolateTrainPosition = (route: RouteData, endCoords: [number, number], distanceToNextStop: number): [number, number] => {
+  let totalDistance = 0;
+  let previousPoint: [number, number] = endCoords;
+
+  for (let i = route.shape.geometry.coordinates.length - 1; i >= 0; i--) {
+    for (let j = route.shape.geometry.coordinates[i].length - 1; j >= 0; j--) {
+      const currentPoint: [number, number] = [route.shape.geometry.coordinates[i][j][1], route.shape.geometry.coordinates[i][j][0]];
+      const segmentDistance = calculateDistance(previousPoint[0], previousPoint[1], currentPoint[0], currentPoint[1]);
+
+      if (totalDistance + segmentDistance >= distanceToNextStop) {
+        const remainingDistance = distanceToNextStop - totalDistance;
+        const fraction = remainingDistance / segmentDistance;
+        return interpolatePosition(currentPoint, previousPoint, fraction) as [number, number];
+      }
+
+      totalDistance += segmentDistance;
+      previousPoint = currentPoint;
+    }
+  }
+
+  return endCoords;
+};
+
+
+
+
 const interpolatePosition = (start: [number, number], end: [number, number], fraction: number): LatLngExpression => {
   const lat = start[0] + (end[0] - start[0]) * fraction;
   const lon = start[1] + (end[1] - start[1]) * fraction;
@@ -166,62 +203,15 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           return null;
         }
 
-        const startStop = findStopById(stops, position.directionId);
-        if (!startStop) {
-          console.error(`Start stop not found for directionId: ${position.directionId}`);
-          return null;
-        }
-
-
-
-        /*const startCoords = findClosestPointOnRoute(route, [startStop.stop_coordinates.lat, startStop.stop_coordinates.lon]);
-        const endCoords = findClosestPointOnRoute(route, [nextStop.stop_coordinates.lat, nextStop.stop_coordinates.lon]);
-
-        const totalDistance = Math.sqrt(
-          Math.pow((endCoords as [number, number])[0] - (startCoords as [number, number])[0], 2) +
-          Math.pow((endCoords as [number, number])[1] - (startCoords as [number, number])[1], 2)
-        );
-
-        if (totalDistance === 0) {
-          console.error(`Total distance is zero for train: ${train.lineid}, pointId: ${position.pointId}`);
-          return null;
-        }
-
-        const fraction = position.distanceFromPoint / totalDistance;
-        const trainPosition = interpolatePosition(startCoords as [number, number], endCoords as [number, number], fraction);*/
-
-        let distanceToNextStop = position.distanceFromPoint;
-        let trainCoords: [number, number] = [nextStop.stop_coordinates.lat, nextStop.stop_coordinates.lon];
-
-        for (let i = route.shape.geometry.coordinates.length - 1; i >= 0; i--) {
-          const segment = route.shape.geometry.coordinates[i];
-
-          for (let j = segment.length - 1; j > 0; j--) {
-            const [lon1, lat1] = segment[j - 1];
-            const [lon2, lat2] = segment[j];
-            const segmentDistance = Math.sqrt(Math.pow(lat2 - lat1, 2) + Math.pow(lon2 - lon1, 2)) * 111139; // Distance in meters
-
-            if (distanceToNextStop <= segmentDistance) {
-              const fraction = distanceToNextStop / segmentDistance;
-              trainCoords = [
-                lat1 + fraction * (lat2 - lat1),
-                lon1 + fraction * (lon2 - lon1)
-              ];
-              break;
-            }
-
-            distanceToNextStop -= segmentDistance;
-          }
-
-          if (distanceToNextStop <= 0) {
-            break;
-          }
-        }
+      
+        const nextStopCoords: [number, number] = [nextStop.stop_coordinates.lat, nextStop.stop_coordinates.lon];
+        const trainCoords = interpolateTrainPosition(route, nextStopCoords, position.distanceFromPoint);
 
         if (!isInBelgium(trainCoords[0], trainCoords[1])) {
           console.error(`Train position out of Belgium bounds for train: ${train.lineid}, pointId: ${position.pointId}`);
           return null;
         }
+
 
         /*if (!isInBelgium(trainPosition[0], trainPosition[1])) {
           console.error(`Train position out of Belgium bounds for train: ${train.lineid}, pointId: ${position.pointId}`);
