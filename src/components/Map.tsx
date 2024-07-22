@@ -137,6 +137,7 @@ const interpolateTrainPosition = (route: RouteData, pointId: string, distanceToN
 
 
 
+
 const interpolatePosition = (start: [number, number], end: [number, number], fraction: number): LatLngExpression => {
   const lat = start[0] + (end[0] - start[0]) * fraction;
   const lon = start[1] + (end[1] - start[1]) * fraction;

@@ -17,6 +17,6 @@ const fetchData = async () => {
   }
 };
 
-// Fetch data every 30 seconds
-setInterval(fetchData, 30000);
+// Fetch data every 20 seconds
+setInterval(fetchData, 20000);
 fetchData();
