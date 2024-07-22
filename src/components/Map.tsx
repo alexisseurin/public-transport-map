@@ -324,8 +324,8 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   
 
   return (
-    <MapContainer className="map-container" center={[50.84045, 4.34878]} zoom={13}>
-      <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />
+    <MapContainer className="map-container" center={[50.84045, 4.34878]} zoom={13} minZoom={1} maxZoom={19}>
+      <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" maxZoom={19}/>
       <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
         {stops.map((stop, index) => (
           <Marker
