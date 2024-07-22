@@ -11,7 +11,7 @@ import informationPlaceholder from "../assets/information.svg"
 import { StopData, RouteData, TrainData } from '../types';
 import "./Map.css";
 import './LinesDisplay.css';
-import { divIcon, point, LatLngExpression, LatLngLiteral, LatLngTuple } from "leaflet";
+import { divIcon, point, LatLngExpression, LatLngLiteral, LatLngTuple, latLng, latLngBounds } from "leaflet";
 import L from "leaflet";
 
 interface MapProps {
@@ -19,6 +19,14 @@ interface MapProps {
   routes: RouteData[];
   trains: TrainData[];
 }
+
+const BELGIUM_BOUNDS = {
+  minLat: 49.5,
+  maxLat: 51.5,
+  minLon: 2.5,
+  maxLon: 6.5
+};
+
 
 const getPlaceholder = (routeType: string) => {
   switch (routeType) {
@@ -33,7 +41,7 @@ const getPlaceholder = (routeType: string) => {
   }
 };
 
-const getIcon = (routeType: string) => {
+/*const getIcon = (routeType: string) => {
   switch (routeType) {
     case 'Subway':
       return subwayIcon;
@@ -44,7 +52,7 @@ const getIcon = (routeType: string) => {
     default:
       return trainIcon;
   }
-};
+};*/
 
 const createClusterCustomIcon = (cluster: any) => divIcon({
   html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
@@ -60,10 +68,36 @@ const findRouteById = (routes: RouteData[], routeShortName: string) => {
   return routes.find(route => route.route_short_name === routeShortName);
 };
 
+const isInBelgium = (lat: number, lon: number) => {
+  return lat >= BELGIUM_BOUNDS.minLat && lat <= BELGIUM_BOUNDS.maxLat &&
+         lon >= BELGIUM_BOUNDS.minLon && lon <= BELGIUM_BOUNDS.maxLon;
+};
+
 const interpolatePosition = (start: [number, number], end: [number, number], fraction: number): LatLngExpression => {
   const lat = start[0] + (end[0] - start[0]) * fraction;
   const lon = start[1] + (end[1] - start[1]) * fraction;
   return [lat, lon];
+};
+
+const findClosestPointOnRoute = (route: RouteData, point: LatLngExpression) => {
+  let closestPoint: [number, number] = route.shape.geometry.coordinates[0] as unknown as [number, number];
+  let minDistance = Infinity;
+
+  route.shape.geometry.coordinates.forEach(coordArray => {
+    coordArray.forEach(coord => {
+      const distance = Math.sqrt(
+        Math.pow(coord[1] - (point as [number, number])[0], 2) +
+        Math.pow(coord[0] - (point as [number, number])[1], 2)
+      );
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestPoint = coord as [number, number];
+      }
+    });
+  });
+
+  return [closestPoint[1], closestPoint[0]] as LatLngExpression;
 };
 
 const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
@@ -95,7 +129,6 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
 
 
   const calculateTrainPositions = () => {
-    const uniqueTrainPositions = new Set();
 
     return trains.flatMap(train => {
       const route = findRouteById(routes, train.lineid);
@@ -106,9 +139,15 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
 
       let vehiclePositions;
       try {
-        vehiclePositions = JSON.parse(train.vehiclepositions);
+        if (typeof train.vehiclepositions === 'string') {
+          vehiclePositions = JSON.parse(train.vehiclepositions);
+        } else {
+          // Sinon, nous l'utilisons directement
+          vehiclePositions = train.vehiclepositions;
+        }
       } catch (error) {
         console.error(`Error parsing vehicle positions for train lineid: ${train.lineid}`, error);
+        console.error(`Invalid JSON: ${train.vehiclepositions}`);
         return [];
       }
 
@@ -117,7 +156,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         return [];
       }
       
-      const icon = getIcon(route.route_type);
+      //const icon = getIcon(route.route_type);
       const placeholder = getPlaceholder(route.route_type);
 
       return vehiclePositions.map(position => {
@@ -133,9 +172,14 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           return null;
         }
 
+
+
+        /*const startCoords = findClosestPointOnRoute(route, [startStop.stop_coordinates.lat, startStop.stop_coordinates.lon]);
+        const endCoords = findClosestPointOnRoute(route, [nextStop.stop_coordinates.lat, nextStop.stop_coordinates.lon]);
+
         const totalDistance = Math.sqrt(
-          Math.pow(nextStop.stop_coordinates.lat - startStop.stop_coordinates.lat, 2) +
-          Math.pow(nextStop.stop_coordinates.lon - startStop.stop_coordinates.lon, 2)
+          Math.pow((endCoords as [number, number])[0] - (startCoords as [number, number])[0], 2) +
+          Math.pow((endCoords as [number, number])[1] - (startCoords as [number, number])[1], 2)
         );
 
         if (totalDistance === 0) {
@@ -144,17 +188,45 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
         }
 
         const fraction = position.distanceFromPoint / totalDistance;
-        const trainPosition = interpolatePosition(
-          [startStop.stop_coordinates.lat, startStop.stop_coordinates.lon],
-          [nextStop.stop_coordinates.lat, nextStop.stop_coordinates.lon],
-          fraction
-        );
+        const trainPosition = interpolatePosition(startCoords as [number, number], endCoords as [number, number], fraction);*/
 
-        const positionKey = `${trainPosition[0]},${trainPosition[1]},${train.lineid}`;
-        if (uniqueTrainPositions.has(positionKey)) {
+        let distanceToNextStop = position.distanceFromPoint;
+        let trainCoords: [number, number] = [nextStop.stop_coordinates.lat, nextStop.stop_coordinates.lon];
+
+        for (let i = route.shape.geometry.coordinates.length - 1; i >= 0; i--) {
+          const segment = route.shape.geometry.coordinates[i];
+
+          for (let j = segment.length - 1; j > 0; j--) {
+            const [lon1, lat1] = segment[j - 1];
+            const [lon2, lat2] = segment[j];
+            const segmentDistance = Math.sqrt(Math.pow(lat2 - lat1, 2) + Math.pow(lon2 - lon1, 2)) * 111139; // Distance in meters
+
+            if (distanceToNextStop <= segmentDistance) {
+              const fraction = distanceToNextStop / segmentDistance;
+              trainCoords = [
+                lat1 + fraction * (lat2 - lat1),
+                lon1 + fraction * (lon2 - lon1)
+              ];
+              break;
+            }
+
+            distanceToNextStop -= segmentDistance;
+          }
+
+          if (distanceToNextStop <= 0) {
+            break;
+          }
+        }
+
+        if (!isInBelgium(trainCoords[0], trainCoords[1])) {
+          console.error(`Train position out of Belgium bounds for train: ${train.lineid}, pointId: ${position.pointId}`);
           return null;
         }
-        uniqueTrainPositions.add(positionKey);
+
+        /*if (!isInBelgium(trainPosition[0], trainPosition[1])) {
+          console.error(`Train position out of Belgium bounds for train: ${train.lineid}, pointId: ${position.pointId}`);
+          return null;
+        }*/
 
         const createCustomIcon = (route_type: string) => {
           const imageSrc = getPlaceholder(route_type);
@@ -178,7 +250,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           <>
           <Marker
             key={`${train.lineid}-${position.pointId}`}
-            position={trainPosition}
+            position={trainCoords}
             icon={createCustomIcon(route.route_type)}
             zIndexOffset={1000}
           >

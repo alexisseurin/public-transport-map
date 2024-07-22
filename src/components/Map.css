@@ -354,3 +354,8 @@
   transform: translateX(-50%);
   margin-right: 1px;
 }
+
+.last-stop .popup-content {
+  border: 2px solid red;
+  padding: 10px;
+}
