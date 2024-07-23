@@ -10,6 +10,7 @@ import './components/StatCounter.css';
 import stopPlaceholder from "./assets/stop.svg";
 import trainPlaceholder from "./assets/train.svg";
 import routePlaceholder from "./assets/road.svg";
+import React from 'react';
 
 function App() {
   const [routes, setRoutes] = useState<RouteData[]>([]);
