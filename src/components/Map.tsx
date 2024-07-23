@@ -1,18 +1,17 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import { trainIcon, stopIcon, tramIcon, busIcon, subwayIcon } from "./Icon";
+import L, { divIcon, point, LatLngExpression } from "leaflet";
+import { StopData, RouteData, TrainData } from '../types';
+import "./Map.css";
+import './LinesDisplay.css';
+
 import stopPlaceholder from "../assets/stop.svg";
 import trainPlaceholder from "../assets/train.svg";
 import subwayPlaceholder from "../assets/subway.svg";
 import tramPlaceholder from "../assets/tram.svg";
 import busPlaceholder from "../assets/bus.svg";
-import informationPlaceholder from "../assets/information.svg"
-import { StopData, RouteData, TrainData } from '../types';
-import "./Map.css";
-import './LinesDisplay.css';
-import { divIcon, point, LatLngExpression, LatLngLiteral, LatLngTuple, latLng, latLngBounds } from "leaflet";
-import L from "leaflet";
+import informationPlaceholder from "../assets/information.svg";
 
 interface MapProps {
   stops: StopData[];
@@ -41,18 +40,6 @@ const getPlaceholder = (routeType: string) => {
   }
 };
 
-/*const getIcon = (routeType: string) => {
-  switch (routeType) {
-    case 'Subway':
-      return subwayIcon;
-    case 'Tram':
-      return tramIcon;
-    case 'Bus':
-      return busIcon;
-    default:
-      return trainIcon;
-  }
-};*/
 
 const createClusterCustomIcon = (cluster: any) => divIcon({
   html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
@@ -131,38 +118,10 @@ const interpolateTrainPosition = (route: RouteData, pointId: string, distanceToN
   return previousPoint || startCoords;
 };
 
-
-
-
-
-
-
-
 const interpolatePosition = (start: [number, number], end: [number, number], fraction: number): LatLngExpression => {
   const lat = start[0] + (end[0] - start[0]) * fraction;
   const lon = start[1] + (end[1] - start[1]) * fraction;
   return [lat, lon];
-};
-
-const findClosestPointOnRoute = (route: RouteData, point: LatLngExpression) => {
-  let closestPoint: [number, number] = route.shape.geometry.coordinates[0] as unknown as [number, number];
-  let minDistance = Infinity;
-
-  route.shape.geometry.coordinates.forEach(coordArray => {
-    coordArray.forEach(coord => {
-      const distance = Math.sqrt(
-        Math.pow(coord[1] - (point as [number, number])[0], 2) +
-        Math.pow(coord[0] - (point as [number, number])[1], 2)
-      );
-
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestPoint = coord as [number, number];
-      }
-    });
-  });
-
-  return [closestPoint[1], closestPoint[0]] as LatLngExpression;
 };
 
 const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {

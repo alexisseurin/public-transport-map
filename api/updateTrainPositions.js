@@ -6,7 +6,13 @@ const url = 'https://data.stib-mivb.brussels/api/explore/v2.1/catalog/datasets/v
 
 const fetchData = async () => {
   try {
-    const response = await axios.get(url);
+    //const response = await axios.get(url);
+    const response = await axios.get(url, {
+      headers: {
+        'X-CSRFToken': 'llgaEdBYkfLJOWCDSUh1mgYv4JJlbMMKTSVuVsfW879DV60RCd8Ph7lgJ3uIK2we',
+        'Cookie': 'sessionid=pe0kwlj71sj4anpc7wiz6ohy2fu6n6a1'
+      }
+    });
     const data = response.data;
 
     const jsonPath = path.join(__dirname, '../public/data/vehicle-position-rt-production.json');

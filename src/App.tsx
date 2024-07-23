@@ -1,15 +1,15 @@
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import './App.css';
-import "leaflet/dist/leaflet.css";
 import Map from "./components/Map";
 import StatCounter from "./components/StatCounter";
+import { RouteData, StopData, TrainData } from './types';
+import LinesDisplay from './components/LinesDisplay';
+import './App.css';
+import "leaflet/dist/leaflet.css";
+import './components/Icon.css';
+import './components/StatCounter.css';
 import stopPlaceholder from "./assets/stop.svg";
 import trainPlaceholder from "./assets/train.svg";
 import routePlaceholder from "./assets/road.svg";
-import './components/Icon.css';
-import './components/StatCounter.css';
-import { RouteData, StopData, TrainData } from './types';
-import LinesDisplay from './components/LinesDisplay';
 
 function App() {
   const [routes, setRoutes] = useState<RouteData[]>([]);
@@ -83,8 +83,6 @@ function App() {
   
 
     const { RouteCount, stopCount, trainCount } = useMemo(() => {
-      //const tramRoutes = routes.filter(route => route.route_type === 'Tram');
-      //const otherRoutes = routes.filter(route => route.route_type !== 'Tram');
       const totalRoutes = routes.length;
       const totalStops = stops.length;
       const totalTrains = trains.length;
