@@ -6,4 +6,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',  // Le dossier de sortie pour les fichiers transpilés
   },
+  base: './',
 })
