@@ -1,5 +1,5 @@
-import { Icon } from "leaflet";
-import stopPlaceholder from "../assets/stop.svg";
+/*import { Icon } from "leaflet";
+import stopPlaceholder from "../assets/map/stop.svg";
 import trainPlaceholder from "../assets/train.svg";
 import tramPlaceholder from "../assets/tram.svg";
 import busPlaceholder from "../assets/bus.svg";
@@ -34,3 +34,5 @@ export const subwayIcon = new Icon({
   iconSize: [38, 38],
   className: "marker-icon"
 });
+
+*/

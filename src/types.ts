@@ -27,8 +27,13 @@ export interface RouteData {
   };
 }
 
+export interface LineOrder {
+  lineid: string;
+  order: string;
+}
+
 export interface StopData {
-  ordersAndLineIds: any;
+  ordersAndLineIds : LineOrder[];
   stop_id: string;
   stop_code: string | null;
   stop_name: {

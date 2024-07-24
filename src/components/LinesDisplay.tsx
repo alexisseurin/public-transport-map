@@ -1,7 +1,7 @@
 import React from 'react';
 import './LinesDisplay.css';
-import upArrow from "../assets/controls/up.svg";
-import downArrow from "../assets/controls/down.svg";
+import upArrow from '../assets/controls/up.svg';
+import downArrow from '../assets/controls/down.svg';
 
 interface LinesDisplayProps {
   isLineDisplayVisible: boolean;

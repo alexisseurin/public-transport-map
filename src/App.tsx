@@ -7,9 +7,9 @@ import './App.css';
 import "leaflet/dist/leaflet.css";
 import './components/Icon.css';
 import './components/StatCounter.css';
-import stopPlaceholder from "./assets/stop.svg";
-import trainPlaceholder from "./assets/train.svg";
-import routePlaceholder from "./assets/road.svg";
+import stopPlaceholder from './assets/map/stop.svg';
+import trainPlaceholder from './assets/vehicles/train.svg';
+import routePlaceholder from "./assets/map/road.svg";
 //import React from 'react';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
         const stopDetails = stopDetailsData.find((detail: { id: string; name: string; }) => detail.id === stop.stop_id);
         const stopName = stopDetails ? JSON.parse(stopDetails.name.replace(/\\/g, '')) : { fr: stop.stop_name, nl: stop.stop_name };
         
-        let ordersAndLineIds: { order: any; lineid: string; }[] = [];
+        const ordersAndLineIds: { order: number; lineid: string; }[] = [];
         stopsByLineData.forEach((line: { lineid: string, points: string }) => {
             const points = JSON.parse(line.points);
             const stopPoint = points.find((point: { id: string; order: number }) => point.id === stop.stop_id);

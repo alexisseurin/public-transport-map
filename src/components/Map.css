@@ -71,7 +71,7 @@
   margin: 4px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../assets/information.svg'); /* Add your SVG path here */
+  background-image: url('../assets/map/information.svg'); /* Add your SVG path here */
 }
 
 #infoButton:hover {

@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/App.tsx", "public-transport-map/src/main.tsx"],
+  "include": ["src", "additional.d.ts", "**/*.ts", "**/*.tsx", "src/App.tsx", "public-transport-map/src/main.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

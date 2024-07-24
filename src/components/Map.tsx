@@ -6,12 +6,12 @@ import { StopData, RouteData, TrainData } from '../types';
 import "./Map.css";
 import './LinesDisplay.css';
 
-import stopPlaceholder from "../assets/stop.svg";
-import trainPlaceholder from "../assets/train.svg";
-import subwayPlaceholder from "../assets/subway.svg";
-import tramPlaceholder from "../assets/tram.svg";
-import busPlaceholder from "../assets/bus.svg";
-import informationPlaceholder from "../assets/information.svg";
+import stopPlaceholder from '../assets/map/stop.svg';
+import trainPlaceholder from '../assets/vehicles/train.svg';
+import subwayPlaceholder from '../assets/vehicles/subway.svg';
+import tramPlaceholder from '../assets/vehicles/tram.svg';
+import busPlaceholder from '../assets/vehicles/bus.svg';
+import informationPlaceholder from '../assets/map/information.svg';
 
 interface MapProps {
   stops: StopData[];
@@ -41,7 +41,7 @@ const getPlaceholder = (routeType: string) => {
 };
 
 
-const createClusterCustomIcon = (cluster: any) => divIcon({
+const createClusterCustomIcon = (cluster: L.MarkerCluster) => divIcon({
   html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
   className: "custom-marker-cluster",
   iconSize: point(35, 35, true)
@@ -271,8 +271,8 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   const trainMarkers = calculateTrainPositions();
 
   const createStopCustomIcon = (stop: StopData) => {
-    const uniqueLines = [...new Set(stop.ordersAndLineIds.map((line: { lineid: any; }) => line.lineid).filter(Boolean))];
-    const lineIcons = uniqueLines.map((lineId: any) => `
+    const uniqueLines = [...new Set(stop.ordersAndLineIds.map((line: { lineid: string }) => line.lineid).filter(Boolean))];
+    const lineIcons = uniqueLines.map((lineId: string) => `
       <div class="line-column line--big line-${lineId.startsWith('T') || lineId.startsWith('M') ? lineId.slice(1) : lineId}" style="margin-bottom: 5px;">
         ${lineId.startsWith('T') || lineId.startsWith('M') ? lineId.slice(1) : lineId}
       </div>
@@ -319,14 +319,14 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
 
                 {stop.stop_id && (
                 <>
-                  {stop.ordersAndLineIds.some((line: any) => line.lineid || line.order) && (
+                  {stop.ordersAndLineIds.some((line: { lineid: string; order: string }) => line.lineid || line.order) && (
                     <div className="lines-section">
                       <div className="list-columns">
                         <div className="titles">
-                          {stop.ordersAndLineIds.some((line: any) => line.lineid) && <h4>Line</h4>}
-                          {stop.ordersAndLineIds.some((line: any) => line.order) && <h4>Order</h4>}
+                          {stop.ordersAndLineIds.some((line: { lineid: string }) => line.lineid) && <h4>Line</h4>}
+                          {stop.ordersAndLineIds.some((line: { order: string }) => line.order) && <h4>Order</h4>}
                         </div>
-                        {stop.ordersAndLineIds.map((line: any, index: any) => (
+                        {stop.ordersAndLineIds.map((line: { lineid: string; order: string }, index: number) => (
                           (line.lineid || line.order) && (
                             <div key={index} className="list-columns__item">
                               <div className="rows">
