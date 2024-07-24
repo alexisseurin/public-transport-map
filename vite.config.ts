@@ -5,6 +5,5 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',  // Le dossier de sortie pour les fichiers transpilés
-  },
-  base: '/',
+  }
 })
