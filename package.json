@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "start": "node serve.js"
   },
   "keywords": [
     "react",
@@ -25,6 +26,7 @@
   "dependencies": {
     "gh-pages": "^6.1.1",
     "leaflet": "^1.9.4",
+    "node-static": "^0.7.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
