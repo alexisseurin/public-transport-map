@@ -1,33 +1,42 @@
-import static from 'node-static';
-import http from 'http';
+import express from 'express';
+import path from 'path';
+import mime from 'mime-types'; // Helper pour les types MIME
 
-// Création d'un serveur de fichiers statiques avec des types MIME personnalisés
-const fileServer = new static.Server('./dist', {
-  cache: 3600,
-  gzip: true,
-  headers: {
-    'X-Content-Type-Options': 'nosniff',
-  },
-  mime: {
-    'tsx': 'application/typescript',
-    'ts': 'application/typescript',
-  },
+const app = express();
+
+// Middleware pour ajouter les en-têtes de sécurité et de performance
+app.use((req, res, next) => {
+  // Sécurité: X-Content-Type-Options
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+
+  // Performance: Cache-Control
+  if (req.url.startsWith('/assets/')) { // Ajustez le chemin selon vos besoins
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+
+  // Ne pas utiliser des en-têtes non nécessaires
+  res.removeHeader('X-XSS-Protection');
+  res.removeHeader('Expires');
+  res.removeHeader('X-Frame-Options');
+
+  // Optionnel: Content-Security-Policy pour sécurité accrue
+  res.setHeader('Content-Security-Policy', "default-src 'self'; frame-ancestors 'none';");
+
+  next();
 });
 
-const requestHandler = (request, response) => {
-  request.addListener('end', () => {
-    fileServer.serve(request, response, (err, response) => {
-      if (err) {
-        console.error("Error serving " + request.url + " - " + err.message);
-        response.writeHead(err.status, err.headers);
-        response.end();
-      }
-    });
-  }).resume();
-};
+// Middleware pour définir le Content-Type correct
+app.use((req, res, next) => {
+  const ext = path.extname(req.url || '');
+  const contentType = mime.contentType(ext) || 'application/octet-stream';
+  res.setHeader('Content-Type', contentType);
+  next();
+});
 
-const httpServer = http.createServer(requestHandler);
+// Serve your static files from 'dist' directory
+app.use(express.static(path.join(path.dirname(new URL(import.meta.url).pathname), 'dist')));
 
-httpServer.listen(3000, () => {
-  console.log('HTTP Server running at http://localhost:3000');
+// Start the server
+app.listen(3000, () => {
+  console.log('Server running at http://localhost:3000');
 });
