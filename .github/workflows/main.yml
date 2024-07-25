@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -27,17 +27,17 @@ jobs:
       - name: Run linter
         run: npm run lint
 
+      - name: Run hint
+        run: npm run hint
+
       - name: Run tests
         run: npm test
 
       - name: Build project
         run: npm run build
 
-      #- name: Deploy to GitHub Pages
-      #  uses: peaceiris/actions-gh-pages@v4
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-      #    publish_dir: ./dist
-
-      - name: Serve the project
-        run: npm run deploy
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

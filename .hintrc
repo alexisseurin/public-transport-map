@@ -1,0 +1,11 @@
+{
+    "extends": [
+        "development"
+    ],
+    "hints": {
+        "x-content-type-options": "error",
+        "http-cache": ["error", {
+            "revvingPatterns": ["\\/\\d+\\/\\w+\\.\\w{1,3}"]
+        }]
+    }
+}
