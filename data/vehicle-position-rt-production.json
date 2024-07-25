@@ -1,0 +1,314 @@
+[
+  {
+    "lineid": "1",
+    "vehiclepositions": "[{\"directionId\": \"8731\", \"distanceFromPoint\": 0, \"pointId\": \"8161\"}, {\"directionId\": \"8731\", \"distanceFromPoint\": 0, \"pointId\": \"8131\"}, {\"directionId\": \"8731\", \"distanceFromPoint\": 1, \"pointId\": \"8741\"}, {\"directionId\": \"8161\", \"distanceFromPoint\": 1, \"pointId\": \"8122\"}, {\"directionId\": \"8731\", \"distanceFromPoint\": 0, \"pointId\": \"8071\"}, {\"directionId\": \"8731\", \"distanceFromPoint\": 0, \"pointId\": \"8011\"}, {\"directionId\": \"8161\", \"distanceFromPoint\": 1, \"pointId\": \"8012\"}, {\"directionId\": \"8161\", \"distanceFromPoint\": 1, \"pointId\": \"8732\"}, {\"directionId\": \"8161\", \"distanceFromPoint\": 1, \"pointId\": \"8062\"}]"
+  },
+  {
+    "lineid": "14",
+    "vehiclepositions": "[{\"directionId\": \"1900\", \"distanceFromPoint\": 0, \"pointId\": \"1732\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 0, \"pointId\": \"1732\"}, {\"directionId\": \"1727\", \"distanceFromPoint\": 240, \"pointId\": \"2515\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 449, \"pointId\": \"1670\"}, {\"directionId\": \"1727\", \"distanceFromPoint\": 0, \"pointId\": \"1900\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 185, \"pointId\": \"2801\"}, {\"directionId\": \"1727\", \"distanceFromPoint\": 549, \"pointId\": \"3245\"}]"
+  },
+  {
+    "lineid": "17",
+    "vehiclepositions": "[{\"directionId\": \"9059\", \"distanceFromPoint\": 63, \"pointId\": \"9059\"}, {\"directionId\": \"9059\", \"distanceFromPoint\": 137, \"pointId\": \"4456\"}]"
+  },
+  {
+    "lineid": "28",
+    "vehiclepositions": "[{\"directionId\": \"1830\", \"distanceFromPoint\": 0, \"pointId\": \"2919\"}, {\"directionId\": \"1830\", \"distanceFromPoint\": 275, \"pointId\": \"1410\"}, {\"directionId\": \"2919\", \"distanceFromPoint\": 55, \"pointId\": \"1459\"}, {\"directionId\": \"2919\", \"distanceFromPoint\": 137, \"pointId\": \"1832\"}, {\"directionId\": \"1830\", \"distanceFromPoint\": 389, \"pointId\": \"1406\"}]"
+  },
+  {
+    "lineid": "29",
+    "vehiclepositions": "[{\"directionId\": \"1528\", \"distanceFromPoint\": 0, \"pointId\": \"2594\"}, {\"directionId\": \"2594\", \"distanceFromPoint\": 0, \"pointId\": \"1528\"}, {\"directionId\": \"9998\", \"distanceFromPoint\": 165, \"pointId\": \"1561\"}, {\"directionId\": \"1528\", \"distanceFromPoint\": 80, \"pointId\": \"3899\"}, {\"directionId\": \"9998\", \"distanceFromPoint\": 72, \"pointId\": \"1528\"}, {\"directionId\": \"1528\", \"distanceFromPoint\": 0, \"pointId\": \"2594\"}, {\"directionId\": \"9998\", \"distanceFromPoint\": 0, \"pointId\": \"3219\"}, {\"directionId\": \"2594\", \"distanceFromPoint\": 154, \"pointId\": \"1570\"}, {\"directionId\": \"9998\", \"distanceFromPoint\": 0, \"pointId\": \"1528\"}, {\"directionId\": \"1528\", \"distanceFromPoint\": 0, \"pointId\": \"1512\"}, {\"directionId\": \"1528\", \"distanceFromPoint\": 219, \"pointId\": \"6444\"}, {\"directionId\": \"2594\", \"distanceFromPoint\": 180, \"pointId\": \"6454\"}, {\"directionId\": \"2594\", \"distanceFromPoint\": 273, \"pointId\": \"1385\"}]"
+  },
+  {
+    "lineid": "33",
+    "vehiclepositions": "[{\"directionId\": \"2177\", \"distanceFromPoint\": 0, \"pointId\": \"3633\"}, {\"directionId\": \"2177\", \"distanceFromPoint\": 396, \"pointId\": \"3505\"}, {\"directionId\": \"3221\", \"distanceFromPoint\": 82, \"pointId\": \"2177\"}]"
+  },
+  {
+    "lineid": "34",
+    "vehiclepositions": "[{\"directionId\": \"4952\", \"distanceFromPoint\": 0, \"pointId\": \"6432\"}, {\"directionId\": \"2728\", \"distanceFromPoint\": 422, \"pointId\": \"1719\"}, {\"directionId\": \"2728\", \"distanceFromPoint\": 0, \"pointId\": \"1716\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 180, \"pointId\": \"1757\"}, {\"directionId\": \"2728\", \"distanceFromPoint\": 0, \"pointId\": \"1824\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 53, \"pointId\": \"1278\"}, {\"directionId\": \"2728\", \"distanceFromPoint\": 0, \"pointId\": \"1706\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 0, \"pointId\": \"2728\"}]"
+  },
+  {
+    "lineid": "36",
+    "vehiclepositions": "[{\"directionId\": \"2719\", \"distanceFromPoint\": 531, \"pointId\": \"1869\"}, {\"directionId\": \"2719\", \"distanceFromPoint\": 22, \"pointId\": \"6464\"}, {\"directionId\": \"1830\", \"distanceFromPoint\": 0, \"pointId\": \"1810\"}, {\"directionId\": \"2719\", \"distanceFromPoint\": 0, \"pointId\": \"1853\"}, {\"directionId\": \"1830\", \"distanceFromPoint\": 262, \"pointId\": \"1173\"}, {\"directionId\": \"2719\", \"distanceFromPoint\": 0, \"pointId\": \"1830\"}, {\"directionId\": \"2719\", \"distanceFromPoint\": 110, \"pointId\": \"1863\"}, {\"directionId\": \"1830\", \"distanceFromPoint\": 304, \"pointId\": \"6465\"}]"
+  },
+  {
+    "lineid": "38",
+    "vehiclepositions": "[{\"directionId\": \"4076\", \"distanceFromPoint\": 0, \"pointId\": \"1909\"}, {\"directionId\": \"4076\", \"distanceFromPoint\": 0, \"pointId\": \"1000\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 0, \"pointId\": \"4076\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 0, \"pointId\": \"4367\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 199, \"pointId\": \"1971\"}, {\"directionId\": \"4076\", \"distanceFromPoint\": 0, \"pointId\": \"1918\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 491, \"pointId\": \"6432\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 16, \"pointId\": \"1976\"}, {\"directionId\": \"4076\", \"distanceFromPoint\": 0, \"pointId\": \"3122\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 0, \"pointId\": \"4076\"}]"
+  },
+  {
+    "lineid": "44",
+    "vehiclepositions": "[{\"directionId\": \"89\", \"distanceFromPoint\": 0, \"pointId\": \"5273\"}, {\"directionId\": \"89\", \"distanceFromPoint\": 0, \"pointId\": \"5273\"}]"
+  },
+  {
+    "lineid": "45",
+    "vehiclepositions": "[{\"directionId\": \"1385\", \"distanceFromPoint\": 34, \"pointId\": \"1321\"}, {\"directionId\": \"1385\", \"distanceFromPoint\": 402, \"pointId\": \"3458\"}, {\"directionId\": \"9292\", \"distanceFromPoint\": 0, \"pointId\": \"1384\"}, {\"directionId\": \"1385\", \"distanceFromPoint\": 0, \"pointId\": \"9292\"}, {\"directionId\": \"9292\", \"distanceFromPoint\": 118, \"pointId\": \"3420\"}, {\"directionId\": \"9292\", \"distanceFromPoint\": 0, \"pointId\": \"1531\"}]"
+  },
+  {
+    "lineid": "47",
+    "vehiclepositions": "[{\"directionId\": \"2655\", \"distanceFromPoint\": 0, \"pointId\": \"3393\"}, {\"directionId\": \"2655\", \"distanceFromPoint\": 0, \"pointId\": \"9784\"}, {\"directionId\": \"9784\", \"distanceFromPoint\": 0, \"pointId\": \"2655\"}, {\"directionId\": \"2655\", \"distanceFromPoint\": 1395, \"pointId\": \"9634\"}, {\"directionId\": \"9784\", \"distanceFromPoint\": 386, \"pointId\": \"2314\"}]"
+  },
+  {
+    "lineid": "48",
+    "vehiclepositions": "[{\"directionId\": \"2733\", \"distanceFromPoint\": 202, \"pointId\": \"2671\"}, {\"directionId\": \"2306\", \"distanceFromPoint\": 0, \"pointId\": \"2539\"}, {\"directionId\": \"2733\", \"distanceFromPoint\": 48, \"pointId\": \"1126\"}, {\"directionId\": \"2733\", \"distanceFromPoint\": 1, \"pointId\": \"2457\"}, {\"directionId\": \"2733\", \"distanceFromPoint\": 72, \"pointId\": \"3630\"}, {\"directionId\": \"2306\", \"distanceFromPoint\": 0, \"pointId\": \"1063\"}, {\"directionId\": \"2306\", \"distanceFromPoint\": 0, \"pointId\": \"2733\"}, {\"directionId\": \"2306\", \"distanceFromPoint\": 236, \"pointId\": \"5811\"}, {\"directionId\": \"2306\", \"distanceFromPoint\": 42, \"pointId\": \"2452\"}]"
+  },
+  {
+    "lineid": "51",
+    "vehiclepositions": "[{\"directionId\": \"9863\", \"distanceFromPoint\": 263, \"pointId\": \"6657\"}, {\"directionId\": \"9863\", \"distanceFromPoint\": 87, \"pointId\": \"5015\"}, {\"directionId\": \"9863\", \"distanceFromPoint\": 108, \"pointId\": \"6653\"}, {\"directionId\": \"9863\", \"distanceFromPoint\": 0, \"pointId\": \"1290\"}, {\"directionId\": \"9863\", \"distanceFromPoint\": 0, \"pointId\": \"5403\"}, {\"directionId\": \"9863\", \"distanceFromPoint\": 0, \"pointId\": \"5007\"}, {\"directionId\": \"1289\", \"distanceFromPoint\": 27, \"pointId\": \"5092\"}, {\"directionId\": \"1289\", \"distanceFromPoint\": 0, \"pointId\": \"5076\"}, {\"directionId\": \"1289\", \"distanceFromPoint\": 168, \"pointId\": \"6608\"}, {\"directionId\": \"1289\", \"distanceFromPoint\": 318, \"pointId\": \"6604\"}]"
+  },
+  {
+    "lineid": "52",
+    "vehiclepositions": "[{\"directionId\": \"1015\", \"distanceFromPoint\": 38, \"pointId\": \"1168\"}, {\"directionId\": \"1015\", \"distanceFromPoint\": 0, \"pointId\": \"1000\"}, {\"directionId\": \"1015\", \"distanceFromPoint\": 330, \"pointId\": \"2738\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 138, \"pointId\": \"2333\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 0, \"pointId\": \"2396\"}, {\"directionId\": \"1000\", \"distanceFromPoint\": 137, \"pointId\": \"1127\"}]"
+  },
+  {
+    "lineid": "53",
+    "vehiclepositions": "[{\"directionId\": \"3446\", \"distanceFromPoint\": 258, \"pointId\": \"2817\"}, {\"directionId\": \"2647\", \"distanceFromPoint\": 101, \"pointId\": \"2507\"}, {\"directionId\": \"2647\", \"distanceFromPoint\": 153, \"pointId\": \"2854\"}, {\"directionId\": \"2647\", \"distanceFromPoint\": 0, \"pointId\": \"3446\"}, {\"directionId\": \"2647\", \"distanceFromPoint\": 227, \"pointId\": \"4131\"}, {\"directionId\": \"2647\", \"distanceFromPoint\": 0, \"pointId\": \"3446\"}, {\"directionId\": \"3446\", \"distanceFromPoint\": 19, \"pointId\": \"2573\"}, {\"directionId\": \"3446\", \"distanceFromPoint\": 0, \"pointId\": \"2647\"}, {\"directionId\": \"3446\", \"distanceFromPoint\": 54, \"pointId\": \"2565\"}, {\"directionId\": \"3446\", \"distanceFromPoint\": 80, \"pointId\": \"2547\"}, {\"directionId\": \"3446\", \"distanceFromPoint\": 0, \"pointId\": \"2647\"}, {\"directionId\": \"2647\", \"distanceFromPoint\": 504, \"pointId\": \"2513\"}]"
+  },
+  {
+    "lineid": "54",
+    "vehiclepositions": "[{\"directionId\": \"1780\", \"distanceFromPoint\": 0, \"pointId\": \"3243\"}, {\"directionId\": \"3243\", \"distanceFromPoint\": 263, \"pointId\": \"1071\"}, {\"directionId\": \"3243\", \"distanceFromPoint\": 0, \"pointId\": \"2928\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 165, \"pointId\": \"2964\"}, {\"directionId\": \"3243\", \"distanceFromPoint\": 20, \"pointId\": \"1780\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 183, \"pointId\": \"2957\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 0, \"pointId\": \"5915\"}]"
+  },
+  {
+    "lineid": "6",
+    "vehiclepositions": "[{\"directionId\": \"8472\", \"distanceFromPoint\": 1, \"pointId\": \"8754\"}, {\"directionId\": \"8834\", \"distanceFromPoint\": 0, \"pointId\": \"8401\"}, {\"directionId\": \"8834\", \"distanceFromPoint\": 0, \"pointId\": \"8381\"}, {\"directionId\": \"8834\", \"distanceFromPoint\": 0, \"pointId\": \"8471\"}, {\"directionId\": \"8834\", \"distanceFromPoint\": 1, \"pointId\": \"8341\"}, {\"directionId\": \"8834\", \"distanceFromPoint\": 0, \"pointId\": \"8472\"}, {\"directionId\": \"8472\", \"distanceFromPoint\": 0, \"pointId\": \"8834\"}, {\"directionId\": \"8472\", \"distanceFromPoint\": 1, \"pointId\": \"8804\"}, {\"directionId\": \"8472\", \"distanceFromPoint\": 1, \"pointId\": \"8362\"}, {\"directionId\": \"8472\", \"distanceFromPoint\": 0, \"pointId\": \"8312\"}, {\"directionId\": \"8834\", \"distanceFromPoint\": 1, \"pointId\": \"8753\"}]"
+  },
+  {
+    "lineid": "64",
+    "vehiclepositions": "[{\"directionId\": \"4952\", \"distanceFromPoint\": 179, \"pointId\": \"2920\"}, {\"directionId\": \"3134\", \"distanceFromPoint\": 0, \"pointId\": \"6082\"}, {\"directionId\": \"3134\", \"distanceFromPoint\": 0, \"pointId\": \"1654\"}, {\"directionId\": \"3134\", \"distanceFromPoint\": 141, \"pointId\": \"1654\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 38, \"pointId\": \"2915\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 0, \"pointId\": \"2912\"}, {\"directionId\": \"3134\", \"distanceFromPoint\": 477, \"pointId\": \"2995\"}]"
+  },
+  {
+    "lineid": "65",
+    "vehiclepositions": "[{\"directionId\": \"3042\", \"distanceFromPoint\": 256, \"pointId\": \"9060\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 0, \"pointId\": \"2905\"}, {\"directionId\": \"3042\", \"distanceFromPoint\": 44, \"pointId\": \"2986\"}, {\"directionId\": \"3042\", \"distanceFromPoint\": 65, \"pointId\": \"9728\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 0, \"pointId\": \"3042\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 160, \"pointId\": \"3306\"}, {\"directionId\": \"3042\", \"distanceFromPoint\": 53, \"pointId\": \"2997\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 141, \"pointId\": \"2915\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 0, \"pointId\": \"6062\"}, {\"directionId\": \"3042\", \"distanceFromPoint\": 44, \"pointId\": \"1283\"}]"
+  },
+  {
+    "lineid": "66",
+    "vehiclepositions": "[{\"directionId\": \"3284\", \"distanceFromPoint\": 183, \"pointId\": \"6445\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 0, \"pointId\": \"3284\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 0, \"pointId\": \"3284\"}, {\"directionId\": \"3284\", \"distanceFromPoint\": 76, \"pointId\": \"6369\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 159, \"pointId\": \"3358\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 304, \"pointId\": \"3410\"}, {\"directionId\": \"3284\", \"distanceFromPoint\": 72, \"pointId\": \"3448\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 0, \"pointId\": \"6442\"}]"
+  },
+  {
+    "lineid": "71",
+    "vehiclepositions": "[{\"directionId\": \"3520\", \"distanceFromPoint\": 0, \"pointId\": \"2596\"}, {\"directionId\": \"2596\", \"distanceFromPoint\": 0, \"pointId\": \"2963\"}, {\"directionId\": \"2596\", \"distanceFromPoint\": 17, \"pointId\": \"3570\"}, {\"directionId\": \"3520\", \"distanceFromPoint\": 77, \"pointId\": \"5407\"}, {\"directionId\": \"3520\", \"distanceFromPoint\": 279, \"pointId\": \"2928\"}, {\"directionId\": \"2596\", \"distanceFromPoint\": 0, \"pointId\": \"3520\"}, {\"directionId\": \"2596\", \"distanceFromPoint\": 1, \"pointId\": \"2967\"}, {\"directionId\": \"2596\", \"distanceFromPoint\": 0, \"pointId\": \"3520\"}, {\"directionId\": \"2596\", \"distanceFromPoint\": 438, \"pointId\": \"2967\"}, {\"directionId\": \"2596\", \"distanceFromPoint\": 190, \"pointId\": \"3520\"}, {\"directionId\": \"3520\", \"distanceFromPoint\": 271, \"pointId\": \"3517\"}, {\"directionId\": \"3520\", \"distanceFromPoint\": 0, \"pointId\": \"2596\"}, {\"directionId\": \"2596\", \"distanceFromPoint\": 393, \"pointId\": \"3558\"}, {\"directionId\": \"3520\", \"distanceFromPoint\": 168, \"pointId\": \"2296\"}]"
+  },
+  {
+    "lineid": "72",
+    "vehiclepositions": "[{\"directionId\": \"3522\", \"distanceFromPoint\": 0, \"pointId\": \"3513\"}, {\"directionId\": \"5407\", \"distanceFromPoint\": 0, \"pointId\": \"3522\"}]"
+  },
+  {
+    "lineid": "79",
+    "vehiclepositions": "[{\"directionId\": \"6465\", \"distanceFromPoint\": 0, \"pointId\": \"1339\"}, {\"directionId\": \"1339\", \"distanceFromPoint\": 0, \"pointId\": \"6464\"}, {\"directionId\": \"6465\", \"distanceFromPoint\": 156, \"pointId\": \"2041\"}, {\"directionId\": \"6465\", \"distanceFromPoint\": 316, \"pointId\": \"3904\"}, {\"directionId\": \"1339\", \"distanceFromPoint\": 0, \"pointId\": \"3959\"}, {\"directionId\": \"1339\", \"distanceFromPoint\": 0, \"pointId\": \"6464\"}]"
+  },
+  {
+    "lineid": "80",
+    "vehiclepositions": "[{\"directionId\": \"4952\", \"distanceFromPoint\": 62, \"pointId\": \"2908\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 499, \"pointId\": \"3898\"}, {\"directionId\": \"9946\", \"distanceFromPoint\": 0, \"pointId\": \"9946\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 0, \"pointId\": \"6432\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 0, \"pointId\": \"4952\"}, {\"directionId\": \"9946\", \"distanceFromPoint\": 73, \"pointId\": \"3160\"}, {\"directionId\": \"9946\", \"distanceFromPoint\": 217, \"pointId\": \"3276\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 5, \"pointId\": \"3921\"}, {\"directionId\": \"4952\", \"distanceFromPoint\": 85, \"pointId\": \"3210\"}, {\"directionId\": \"9946\", \"distanceFromPoint\": 0, \"pointId\": \"9946\"}, {\"directionId\": \"9946\", \"distanceFromPoint\": 0, \"pointId\": \"1824\"}]"
+  },
+  {
+    "lineid": "81",
+    "vehiclepositions": "[{\"directionId\": \"2284\", \"distanceFromPoint\": 226, \"pointId\": \"6463\"}, {\"directionId\": \"3610\", \"distanceFromPoint\": 38, \"pointId\": \"3608\"}, {\"directionId\": \"3610\", \"distanceFromPoint\": 389, \"pointId\": \"6009\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 59, \"pointId\": \"3508\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 0, \"pointId\": \"6705\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 0, \"pointId\": \"6077\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 0, \"pointId\": \"3611\"}, {\"directionId\": \"3610\", \"distanceFromPoint\": 0, \"pointId\": \"6162\"}, {\"directionId\": \"3610\", \"distanceFromPoint\": 0, \"pointId\": \"6166\"}, {\"directionId\": \"3610\", \"distanceFromPoint\": 0, \"pointId\": \"2286\"}, {\"directionId\": \"3610\", \"distanceFromPoint\": 0, \"pointId\": \"3572\"}, {\"directionId\": \"1042\", \"distanceFromPoint\": 0, \"pointId\": \"3123\"}, {\"directionId\": \"1042\", \"distanceFromPoint\": 0, \"pointId\": \"2285\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 0, \"pointId\": \"1042\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 130, \"pointId\": \"3611\"}, {\"directionId\": \"3610\", \"distanceFromPoint\": 215, \"pointId\": \"6068\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 7, \"pointId\": \"6858\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 0, \"pointId\": \"6121\"}, {\"directionId\": \"2284\", \"distanceFromPoint\": 0, \"pointId\": \"6117\"}, {\"directionId\": \"3610\", \"distanceFromPoint\": 191, \"pointId\": \"2220\"}]"
+  },
+  {
+    "lineid": "86",
+    "vehiclepositions": "[{\"directionId\": \"2558\", \"distanceFromPoint\": 34, \"pointId\": \"3281\"}, {\"directionId\": \"2558\", \"distanceFromPoint\": 0, \"pointId\": \"3234\"}, {\"directionId\": \"3234\", \"distanceFromPoint\": 42, \"pointId\": \"6702\"}, {\"directionId\": \"2558\", \"distanceFromPoint\": 112, \"pointId\": \"3083\"}, {\"directionId\": \"3234\", \"distanceFromPoint\": 0, \"pointId\": \"2558\"}, {\"directionId\": \"3234\", \"distanceFromPoint\": 172, \"pointId\": \"3082\"}, {\"directionId\": \"2558\", \"distanceFromPoint\": 139, \"pointId\": \"5014\"}, {\"directionId\": \"2558\", \"distanceFromPoint\": 0, \"pointId\": \"3234\"}]"
+  },
+  {
+    "lineid": "89",
+    "vehiclepositions": "[{\"directionId\": \"3392\", \"distanceFromPoint\": 0, \"pointId\": \"2784\"}, {\"directionId\": \"3392\", \"distanceFromPoint\": 135, \"pointId\": \"1204\"}, {\"directionId\": \"1034\", \"distanceFromPoint\": 432, \"pointId\": \"3225\"}, {\"directionId\": \"3392\", \"distanceFromPoint\": 0, \"pointId\": \"1034\"}, {\"directionId\": \"1034\", \"distanceFromPoint\": 44, \"pointId\": \"3636\"}, {\"directionId\": \"1034\", \"distanceFromPoint\": 173, \"pointId\": \"2779\"}, {\"directionId\": \"1034\", \"distanceFromPoint\": 115, \"pointId\": \"3320\"}, {\"directionId\": \"3392\", \"distanceFromPoint\": 0, \"pointId\": \"3389\"}, {\"directionId\": \"1034\", \"distanceFromPoint\": 0, \"pointId\": \"3392\"}]"
+  },
+  {
+    "lineid": "9",
+    "vehiclepositions": "[{\"directionId\": \"1695\", \"distanceFromPoint\": 0, \"pointId\": \"1687\"}, {\"directionId\": \"1695\", \"distanceFromPoint\": 152, \"pointId\": \"0471\"}, {\"directionId\": \"5169\", \"distanceFromPoint\": 343, \"pointId\": \"5170\"}, {\"directionId\": \"5169\", \"distanceFromPoint\": 240, \"pointId\": \"1695\"}, {\"directionId\": \"1695\", \"distanceFromPoint\": 120, \"pointId\": \"1306\"}, {\"directionId\": \"5169\", \"distanceFromPoint\": 77, \"pointId\": \"1199\"}, {\"directionId\": \"5169\", \"distanceFromPoint\": 85, \"pointId\": \"1680\"}, {\"directionId\": \"5169\", \"distanceFromPoint\": 0, \"pointId\": \"1014\"}, {\"directionId\": \"1695\", \"distanceFromPoint\": 0, \"pointId\": \"5104\"}, {\"directionId\": \"1695\", \"distanceFromPoint\": 272, \"pointId\": \"1677\"}]"
+  },
+  {
+    "lineid": "97",
+    "vehiclepositions": "[{\"directionId\": \"5159\", \"distanceFromPoint\": 184, \"pointId\": \"6078\"}, {\"directionId\": \"9990\", \"distanceFromPoint\": 0, \"pointId\": \"5175\"}, {\"directionId\": \"9990\", \"distanceFromPoint\": 105, \"pointId\": \"5068\"}]"
+  },
+  {
+    "lineid": "T39",
+    "vehiclepositions": "[{\"directionId\": \"3430\", \"distanceFromPoint\": 0, \"pointId\": \"7792\"}, {\"directionId\": \"7792\", \"distanceFromPoint\": 0, \"pointId\": \"3430\"}, {\"directionId\": \"3430\", \"distanceFromPoint\": 101, \"pointId\": \"1214\"}, {\"directionId\": \"3430\", \"distanceFromPoint\": 0, \"pointId\": \"7792\"}, {\"directionId\": \"7792\", \"distanceFromPoint\": 0, \"pointId\": \"3430\"}, {\"directionId\": \"7792\", \"distanceFromPoint\": 487, \"pointId\": \"1375\"}, {\"directionId\": \"7792\", \"distanceFromPoint\": 0, \"pointId\": \"7868\"}, {\"directionId\": \"3430\", \"distanceFromPoint\": 98, \"pointId\": \"2443\"}, {\"directionId\": \"3430\", \"distanceFromPoint\": 473, \"pointId\": \"7794\"}, {\"directionId\": \"3430\", \"distanceFromPoint\": 411, \"pointId\": \"1215\"}, {\"directionId\": \"7792\", \"distanceFromPoint\": 235, \"pointId\": \"1171\"}, {\"directionId\": \"7792\", \"distanceFromPoint\": 399, \"pointId\": \"1834\"}]"
+  },
+  {
+    "lineid": "12",
+    "vehiclepositions": "[{\"directionId\": \"1780\", \"distanceFromPoint\": 749, \"pointId\": \"1151\"}, {\"directionId\": \"9600\", \"distanceFromPoint\": 0, \"pointId\": \"1780\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 1181, \"pointId\": \"2250\"}, {\"directionId\": \"9600\", \"distanceFromPoint\": 34, \"pointId\": \"5044\"}, {\"directionId\": \"9600\", \"distanceFromPoint\": 757, \"pointId\": \"1318\"}, {\"directionId\": \"9600\", \"distanceFromPoint\": 249, \"pointId\": \"1780\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 550, \"pointId\": \"5048\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 0, \"pointId\": \"9600\"}, {\"directionId\": \"1780\", \"distanceFromPoint\": 0, \"pointId\": \"9600\"}]"
+  },
+  {
+    "lineid": "2",
+    "vehiclepositions": "[{\"directionId\": \"8763\", \"distanceFromPoint\": 0, \"pointId\": \"8472\"}, {\"directionId\": \"8763\", \"distanceFromPoint\": 0, \"pointId\": \"8371\"}, {\"directionId\": \"8472\", \"distanceFromPoint\": 1, \"pointId\": \"8402\"}, {\"directionId\": \"8472\", \"distanceFromPoint\": 0, \"pointId\": \"8342\"}, {\"directionId\": \"8472\", \"distanceFromPoint\": 1, \"pointId\": \"8432\"}, {\"directionId\": \"8763\", \"distanceFromPoint\": 1, \"pointId\": \"8441\"}, {\"directionId\": \"8763\", \"distanceFromPoint\": 0, \"pointId\": \"8743\"}, {\"directionId\": \"8763\", \"distanceFromPoint\": 1, \"pointId\": \"8311\"}, {\"directionId\": \"8472\", \"distanceFromPoint\": 0, \"pointId\": \"8764\"}]"
+  },
+  {
+    "lineid": "20",
+    "vehiclepositions": "[{\"directionId\": \"1194\", \"distanceFromPoint\": 34, \"pointId\": \"4661\"}, {\"directionId\": \"1194\", \"distanceFromPoint\": 691, \"pointId\": \"1671\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 624, \"pointId\": \"5014\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 0, \"pointId\": \"1142\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 160, \"pointId\": \"5014\"}, {\"directionId\": \"1194\", \"distanceFromPoint\": 0, \"pointId\": \"1197\"}, {\"directionId\": \"1194\", \"distanceFromPoint\": 151, \"pointId\": \"1900\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 49, \"pointId\": \"2081\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 0, \"pointId\": \"1118\"}]"
+  },
+  {
+    "lineid": "3",
+    "vehiclepositions": "[{\"directionId\": \"5776\", \"distanceFromPoint\": 84, \"pointId\": \"6424\"}, {\"directionId\": \"5776\", \"distanceFromPoint\": 0, \"pointId\": \"2537\"}, {\"directionId\": \"9959\", \"distanceFromPoint\": 0, \"pointId\": \"5714\"}, {\"directionId\": \"9959\", \"distanceFromPoint\": 408, \"pointId\": \"6253\"}, {\"directionId\": \"5776\", \"distanceFromPoint\": 0, \"pointId\": \"0526\"}, {\"directionId\": \"9959\", \"distanceFromPoint\": 109, \"pointId\": \"5700\"}, {\"directionId\": \"9959\", \"distanceFromPoint\": 0, \"pointId\": \"0601\"}, {\"directionId\": \"9959\", \"distanceFromPoint\": 46, \"pointId\": \"0702\"}, {\"directionId\": \"5776\", \"distanceFromPoint\": 179, \"pointId\": \"5716\"}, {\"directionId\": \"5776\", \"distanceFromPoint\": 44, \"pointId\": \"0726\"}, {\"directionId\": \"5776\", \"distanceFromPoint\": 0, \"pointId\": \"9986\"}, {\"directionId\": \"5776\", \"distanceFromPoint\": 672, \"pointId\": \"5806\"}, {\"directionId\": \"9959\", \"distanceFromPoint\": 0, \"pointId\": \"5701\"}, {\"directionId\": \"9959\", \"distanceFromPoint\": 45, \"pointId\": \"5707\"}]"
+  },
+  {
+    "lineid": "4",
+    "vehiclepositions": "[{\"directionId\": \"9962\", \"distanceFromPoint\": 365, \"pointId\": \"0526\"}, {\"directionId\": \"4507\", \"distanceFromPoint\": 0, \"pointId\": \"0531\"}, {\"directionId\": \"9962\", \"distanceFromPoint\": 12, \"pointId\": \"5916\"}, {\"directionId\": \"9962\", \"distanceFromPoint\": 40, \"pointId\": \"0626\"}, {\"directionId\": \"4507\", \"distanceFromPoint\": 131, \"pointId\": \"5025\"}, {\"directionId\": \"9962\", \"distanceFromPoint\": 103, \"pointId\": \"5058\"}, {\"directionId\": \"9962\", \"distanceFromPoint\": 0, \"pointId\": \"4501\"}, {\"directionId\": \"9962\", \"distanceFromPoint\": 40, \"pointId\": \"0722\"}, {\"directionId\": \"4507\", \"distanceFromPoint\": 139, \"pointId\": \"0621\"}, {\"directionId\": \"4507\", \"distanceFromPoint\": 40, \"pointId\": \"5920\"}, {\"directionId\": \"4507\", \"distanceFromPoint\": 38, \"pointId\": \"6253\"}]"
+  },
+  {
+    "lineid": "42",
+    "vehiclepositions": "[{\"directionId\": \"2015\", \"distanceFromPoint\": 153, \"pointId\": \"9876\"}, {\"directionId\": \"2015\", \"distanceFromPoint\": 200, \"pointId\": \"1551\"}, {\"directionId\": \"1385\", \"distanceFromPoint\": 77, \"pointId\": \"2029\"}, {\"directionId\": \"1385\", \"distanceFromPoint\": 394, \"pointId\": \"9853\"}]"
+  },
+  {
+    "lineid": "46",
+    "vehiclepositions": "[{\"directionId\": \"1033\", \"distanceFromPoint\": 439, \"pointId\": \"1227\"}, {\"directionId\": \"1033\", \"distanceFromPoint\": 0, \"pointId\": \"3418\"}, {\"directionId\": \"3418\", \"distanceFromPoint\": 243, \"pointId\": \"3379\"}, {\"directionId\": \"3418\", \"distanceFromPoint\": 0, \"pointId\": \"1033\"}, {\"directionId\": \"1033\", \"distanceFromPoint\": 62, \"pointId\": \"2218\"}, {\"directionId\": \"3418\", \"distanceFromPoint\": 34, \"pointId\": \"2319\"}, {\"directionId\": \"1033\", \"distanceFromPoint\": 9, \"pointId\": \"2323\"}, {\"directionId\": \"1033\", \"distanceFromPoint\": 0, \"pointId\": \"3418\"}, {\"directionId\": \"3418\", \"distanceFromPoint\": 0, \"pointId\": \"1033\"}]"
+  },
+  {
+    "lineid": "5",
+    "vehiclepositions": "[{\"directionId\": \"8642\", \"distanceFromPoint\": 0, \"pointId\": \"8281\"}, {\"directionId\": \"8262\", \"distanceFromPoint\": 0, \"pointId\": \"8042\"}, {\"directionId\": \"8262\", \"distanceFromPoint\": 0, \"pointId\": \"8282\"}, {\"directionId\": \"8642\", \"distanceFromPoint\": 0, \"pointId\": \"8721\"}, {\"directionId\": \"8642\", \"distanceFromPoint\": 1, \"pointId\": \"8221\"}, {\"directionId\": \"8642\", \"distanceFromPoint\": 0, \"pointId\": \"8051\"}, {\"directionId\": \"8642\", \"distanceFromPoint\": 0, \"pointId\": \"8261\"}, {\"directionId\": \"8262\", \"distanceFromPoint\": 0, \"pointId\": \"8222\"}, {\"directionId\": \"8262\", \"distanceFromPoint\": 0, \"pointId\": \"8702\"}, {\"directionId\": \"8642\", \"distanceFromPoint\": 0, \"pointId\": \"8661\"}, {\"directionId\": \"8262\", \"distanceFromPoint\": 0, \"pointId\": \"8641\"}]"
+  },
+  {
+    "lineid": "50",
+    "vehiclepositions": "[{\"directionId\": \"3211\", \"distanceFromPoint\": 0, \"pointId\": \"9658\"}, {\"directionId\": \"3211\", \"distanceFromPoint\": 557, \"pointId\": \"1085\"}, {\"directionId\": \"3211\", \"distanceFromPoint\": 777, \"pointId\": \"9683\"}, {\"directionId\": \"9658\", \"distanceFromPoint\": 200, \"pointId\": \"2548\"}, {\"directionId\": \"9658\", \"distanceFromPoint\": 0, \"pointId\": \"2611\"}, {\"directionId\": \"9658\", \"distanceFromPoint\": 0, \"pointId\": \"3211\"}]"
+  },
+  {
+    "lineid": "57",
+    "vehiclepositions": "[{\"directionId\": \"3446\", \"distanceFromPoint\": 79, \"pointId\": \"1051\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 297, \"pointId\": \"1024\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 140, \"pointId\": \"3005\"}, {\"directionId\": \"3446\", \"distanceFromPoint\": 640, \"pointId\": \"3388\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 0, \"pointId\": \"3446\"}]"
+  },
+  {
+    "lineid": "59",
+    "vehiclepositions": "[{\"directionId\": \"3130\", \"distanceFromPoint\": 0, \"pointId\": \"3164\"}, {\"directionId\": \"3125\", \"distanceFromPoint\": 52, \"pointId\": \"3109\"}, {\"directionId\": \"3130\", \"distanceFromPoint\": 51, \"pointId\": \"6158\"}, {\"directionId\": \"3125\", \"distanceFromPoint\": 172, \"pointId\": \"3118\"}, {\"directionId\": \"3130\", \"distanceFromPoint\": 0, \"pointId\": \"6464\"}, {\"directionId\": \"3125\", \"distanceFromPoint\": 0, \"pointId\": \"3117\"}, {\"directionId\": \"3130\", \"distanceFromPoint\": 300, \"pointId\": \"3163\"}, {\"directionId\": \"3130\", \"distanceFromPoint\": 152, \"pointId\": \"3173\"}, {\"directionId\": \"3125\", \"distanceFromPoint\": 316, \"pointId\": \"3372\"}]"
+  },
+  {
+    "lineid": "61",
+    "vehiclepositions": "[{\"directionId\": \"9996\", \"distanceFromPoint\": 0, \"pointId\": \"1136\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 0, \"pointId\": \"6059\"}, {\"directionId\": \"9996\", \"distanceFromPoint\": 0, \"pointId\": \"9023\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 186, \"pointId\": \"1988\"}, {\"directionId\": \"1900\", \"distanceFromPoint\": 16, \"pointId\": \"2287\"}]"
+  },
+  {
+    "lineid": "62",
+    "vehiclepositions": "[{\"directionId\": \"9051\", \"distanceFromPoint\": 341, \"pointId\": \"1696\"}, {\"directionId\": \"9941\", \"distanceFromPoint\": 143, \"pointId\": \"5003\"}, {\"directionId\": \"9941\", \"distanceFromPoint\": 0, \"pointId\": \"9058\"}, {\"directionId\": \"9941\", \"distanceFromPoint\": 138, \"pointId\": \"2878\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 279, \"pointId\": \"6174\"}, {\"directionId\": \"9941\", \"distanceFromPoint\": 0, \"pointId\": \"3360\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 85, \"pointId\": \"2635\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 0, \"pointId\": \"5274\"}, {\"directionId\": \"9941\", \"distanceFromPoint\": 452, \"pointId\": \"5277\"}]"
+  },
+  {
+    "lineid": "69",
+    "vehiclepositions": "[{\"directionId\": \"9311\", \"distanceFromPoint\": 0, \"pointId\": \"3107\"}, {\"directionId\": \"3107\", \"distanceFromPoint\": 91, \"pointId\": \"5361\"}, {\"directionId\": \"3107\", \"distanceFromPoint\": 0, \"pointId\": \"9311\"}, {\"directionId\": \"9311\", \"distanceFromPoint\": 198, \"pointId\": \"3175\"}]"
+  },
+  {
+    "lineid": "74",
+    "vehiclepositions": "[{\"directionId\": \"3074\", \"distanceFromPoint\": 139, \"pointId\": \"2252\"}, {\"directionId\": \"3074\", \"distanceFromPoint\": 0, \"pointId\": \"3074\"}, {\"directionId\": \"3074\", \"distanceFromPoint\": 11, \"pointId\": \"2523\"}, {\"directionId\": \"3074\", \"distanceFromPoint\": 186, \"pointId\": \"1074\"}, {\"directionId\": \"3074\", \"distanceFromPoint\": 664, \"pointId\": \"3074\"}]"
+  },
+  {
+    "lineid": "75",
+    "vehiclepositions": "[{\"directionId\": \"1486\", \"distanceFromPoint\": 173, \"pointId\": \"1480\"}, {\"directionId\": \"1951\", \"distanceFromPoint\": 174, \"pointId\": \"1493\"}, {\"directionId\": \"1951\", \"distanceFromPoint\": 60, \"pointId\": \"5058\"}, {\"directionId\": \"1951\", \"distanceFromPoint\": 12, \"pointId\": \"1487\"}, {\"directionId\": \"1951\", \"distanceFromPoint\": 2417, \"pointId\": \"3078\"}, {\"directionId\": \"1486\", \"distanceFromPoint\": 169, \"pointId\": \"2610\"}, {\"directionId\": \"1951\", \"distanceFromPoint\": 0, \"pointId\": \"1486\"}]"
+  },
+  {
+    "lineid": "77",
+    "vehiclepositions": "[{\"directionId\": \"7501\", \"distanceFromPoint\": 0, \"pointId\": \"1638\"}, {\"directionId\": \"1638\", \"distanceFromPoint\": 167, \"pointId\": \"1381\"}, {\"directionId\": \"7501\", \"distanceFromPoint\": 0, \"pointId\": \"1380\"}]"
+  },
+  {
+    "lineid": "78",
+    "vehiclepositions": "[{\"directionId\": \"3850\", \"distanceFromPoint\": 0, \"pointId\": \"3808\"}, {\"directionId\": \"1662\", \"distanceFromPoint\": 0, \"pointId\": \"3850\"}, {\"directionId\": \"3850\", \"distanceFromPoint\": 0, \"pointId\": \"1664\"}]"
+  },
+  {
+    "lineid": "8",
+    "vehiclepositions": "[{\"directionId\": \"9924\", \"distanceFromPoint\": 55, \"pointId\": \"5422\"}, {\"directionId\": \"9924\", \"distanceFromPoint\": 38, \"pointId\": \"5413\"}, {\"directionId\": \"9990\", \"distanceFromPoint\": 456, \"pointId\": \"2026\"}, {\"directionId\": \"9924\", \"distanceFromPoint\": 0, \"pointId\": \"5404\"}, {\"directionId\": \"9990\", \"distanceFromPoint\": 435, \"pointId\": \"5468\"}, {\"directionId\": \"5280\", \"distanceFromPoint\": 0, \"pointId\": \"5230\"}, {\"directionId\": \"9924\", \"distanceFromPoint\": 0, \"pointId\": \"9924\"}, {\"directionId\": \"9990\", \"distanceFromPoint\": 521, \"pointId\": \"5456\"}, {\"directionId\": \"5280\", \"distanceFromPoint\": 0, \"pointId\": \"5230\"}, {\"directionId\": \"5280\", \"distanceFromPoint\": 347, \"pointId\": \"5228\"}, {\"directionId\": \"9990\", \"distanceFromPoint\": 0, \"pointId\": \"5427\"}, {\"directionId\": \"9990\", \"distanceFromPoint\": 128, \"pointId\": \"5475\"}]"
+  },
+  {
+    "lineid": "92",
+    "vehiclepositions": "[{\"directionId\": \"6934\", \"distanceFromPoint\": 322, \"pointId\": \"6309\"}, {\"directionId\": \"5320\", \"distanceFromPoint\": 4, \"pointId\": \"6354\"}, {\"directionId\": \"6934\", \"distanceFromPoint\": 371, \"pointId\": \"5315\"}, {\"directionId\": \"5320\", \"distanceFromPoint\": 313, \"pointId\": \"5064\"}, {\"directionId\": \"6934\", \"distanceFromPoint\": 45, \"pointId\": \"5016\"}, {\"directionId\": \"5320\", \"distanceFromPoint\": 0, \"pointId\": \"6934\"}, {\"directionId\": \"5320\", \"distanceFromPoint\": 0, \"pointId\": \"6934\"}, {\"directionId\": \"6934\", \"distanceFromPoint\": 0, \"pointId\": \"5315\"}, {\"directionId\": \"5320\", \"distanceFromPoint\": 3, \"pointId\": \"5766\"}, {\"directionId\": \"5320\", \"distanceFromPoint\": 20, \"pointId\": \"6363\"}, {\"directionId\": \"5320\", \"distanceFromPoint\": 0, \"pointId\": \"6956\"}, {\"directionId\": \"6934\", \"distanceFromPoint\": 54, \"pointId\": \"6303\"}, {\"directionId\": \"5320\", \"distanceFromPoint\": 0, \"pointId\": \"5059\"}, {\"directionId\": \"6934\", \"distanceFromPoint\": 272, \"pointId\": \"5025\"}]"
+  },
+  {
+    "lineid": "93",
+    "vehiclepositions": "[{\"directionId\": \"1058\", \"distanceFromPoint\": 211, \"pointId\": \"5400\"}, {\"directionId\": \"1058\", \"distanceFromPoint\": 0, \"pointId\": \"6314\"}, {\"directionId\": \"1058\", \"distanceFromPoint\": 40, \"pointId\": \"6437\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 0, \"pointId\": \"5474\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 25, \"pointId\": \"6361\"}, {\"directionId\": \"1058\", \"distanceFromPoint\": 46, \"pointId\": \"6178\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 39, \"pointId\": \"6179\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 55, \"pointId\": \"5467\"}, {\"directionId\": \"1058\", \"distanceFromPoint\": 276, \"pointId\": \"5404\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 105, \"pointId\": \"2879\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 125, \"pointId\": \"6353\"}, {\"directionId\": \"1058\", \"distanceFromPoint\": 100, \"pointId\": \"6504\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 355, \"pointId\": \"5471\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 0, \"pointId\": \"1059\"}, {\"directionId\": \"5474\", \"distanceFromPoint\": 3, \"pointId\": \"6355\"}]"
+  },
+  {
+    "lineid": "T44",
+    "vehiclepositions": "[{\"directionId\": \"2289\", \"distanceFromPoint\": 975, \"pointId\": \"3077\"}, {\"directionId\": \"2289\", \"distanceFromPoint\": 153, \"pointId\": \"1222\"}, {\"directionId\": \"2289\", \"distanceFromPoint\": 1813, \"pointId\": \"3077\"}, {\"directionId\": \"7305\", \"distanceFromPoint\": 44, \"pointId\": \"7978\"}, {\"directionId\": \"7305\", \"distanceFromPoint\": 0, \"pointId\": \"2289\"}, {\"directionId\": \"7305\", \"distanceFromPoint\": 0, \"pointId\": \"2289\"}]"
+  },
+  {
+    "lineid": "13",
+    "vehiclepositions": "[{\"directionId\": \"1727\", \"distanceFromPoint\": 317, \"pointId\": \"4152\"}, {\"directionId\": \"4111\", \"distanceFromPoint\": 0, \"pointId\": \"1732\"}, {\"directionId\": \"4111\", \"distanceFromPoint\": 512, \"pointId\": \"2519\"}, {\"directionId\": \"1727\", \"distanceFromPoint\": 0, \"pointId\": \"4111\"}, {\"directionId\": \"4111\", \"distanceFromPoint\": 0, \"pointId\": \"1747\"}, {\"directionId\": \"1727\", \"distanceFromPoint\": 40, \"pointId\": \"2850\"}, {\"directionId\": \"4111\", \"distanceFromPoint\": 0, \"pointId\": \"1732\"}]"
+  },
+  {
+    "lineid": "18",
+    "vehiclepositions": "[{\"directionId\": \"712\", \"distanceFromPoint\": 0, \"pointId\": \"5838\"}, {\"directionId\": \"1110\", \"distanceFromPoint\": 395, \"pointId\": \"5831\"}, {\"directionId\": \"712\", \"distanceFromPoint\": 0, \"pointId\": \"1110\"}, {\"directionId\": \"712\", \"distanceFromPoint\": 2, \"pointId\": \"5860\"}, {\"directionId\": \"1110\", \"distanceFromPoint\": 0, \"pointId\": \"5825\"}, {\"directionId\": \"1110\", \"distanceFromPoint\": 0, \"pointId\": \"0711\"}, {\"directionId\": \"1110\", \"distanceFromPoint\": 38, \"pointId\": \"0711\"}, {\"directionId\": \"712\", \"distanceFromPoint\": 324, \"pointId\": \"5853\"}]"
+  },
+  {
+    "lineid": "19",
+    "vehiclepositions": "[{\"directionId\": \"5086\", \"distanceFromPoint\": 125, \"pointId\": \"5090\"}, {\"directionId\": \"5086\", \"distanceFromPoint\": 69, \"pointId\": \"6864\"}, {\"directionId\": \"473\", \"distanceFromPoint\": 177, \"pointId\": \"5001\"}, {\"directionId\": \"473\", \"distanceFromPoint\": 0, \"pointId\": \"5001\"}, {\"directionId\": \"473\", \"distanceFromPoint\": 40, \"pointId\": \"5088\"}, {\"directionId\": \"5086\", \"distanceFromPoint\": 0, \"pointId\": \"5090\"}, {\"directionId\": \"473\", \"distanceFromPoint\": 0, \"pointId\": \"0473\"}]"
+  },
+  {
+    "lineid": "21",
+    "vehiclepositions": "[{\"directionId\": \"1162\", \"distanceFromPoint\": 1, \"pointId\": \"1317\"}, {\"directionId\": \"1162\", \"distanceFromPoint\": 301, \"pointId\": \"3201\"}, {\"directionId\": \"3201\", \"distanceFromPoint\": 10, \"pointId\": \"6464\"}, {\"directionId\": \"1162\", \"distanceFromPoint\": 177, \"pointId\": \"4505\"}, {\"directionId\": \"3201\", \"distanceFromPoint\": 230, \"pointId\": \"3956\"}, {\"directionId\": \"3201\", \"distanceFromPoint\": 0, \"pointId\": \"1262\"}, {\"directionId\": \"3201\", \"distanceFromPoint\": 0, \"pointId\": \"3420\"}, {\"directionId\": \"1162\", \"distanceFromPoint\": 0, \"pointId\": \"3201\"}]"
+  },
+  {
+    "lineid": "25",
+    "vehiclepositions": "[{\"directionId\": \"6487\", \"distanceFromPoint\": 134, \"pointId\": \"5414\"}, {\"directionId\": \"539\", \"distanceFromPoint\": 383, \"pointId\": \"0826\"}, {\"directionId\": \"6487\", \"distanceFromPoint\": 231, \"pointId\": \"6204\"}, {\"directionId\": \"6487\", \"distanceFromPoint\": 0, \"pointId\": \"6201\"}, {\"directionId\": \"539\", \"distanceFromPoint\": 302, \"pointId\": \"5261\"}, {\"directionId\": \"539\", \"distanceFromPoint\": 154, \"pointId\": \"5714\"}, {\"directionId\": \"6487\", \"distanceFromPoint\": 308, \"pointId\": \"5200\"}, {\"directionId\": \"6487\", \"distanceFromPoint\": 40, \"pointId\": \"0811\"}, {\"directionId\": \"6487\", \"distanceFromPoint\": 44, \"pointId\": \"0539\"}, {\"directionId\": \"539\", \"distanceFromPoint\": 532, \"pointId\": \"3308\"}, {\"directionId\": \"6487\", \"distanceFromPoint\": 0, \"pointId\": \"0539\"}]"
+  },
+  {
+    "lineid": "27",
+    "vehiclepositions": "[{\"directionId\": \"2429\", \"distanceFromPoint\": 0, \"pointId\": \"1262\"}, {\"directionId\": \"1162\", \"distanceFromPoint\": 394, \"pointId\": \"1150\"}, {\"directionId\": \"2429\", \"distanceFromPoint\": 0, \"pointId\": \"1132\"}, {\"directionId\": \"1162\", \"distanceFromPoint\": 0, \"pointId\": \"2429\"}]"
+  },
+  {
+    "lineid": "37",
+    "vehiclepositions": "[{\"directionId\": \"2934\", \"distanceFromPoint\": 0, \"pointId\": \"2934\"}, {\"directionId\": \"2934\", \"distanceFromPoint\": 46, \"pointId\": \"4857\"}, {\"directionId\": \"2934\", \"distanceFromPoint\": 41, \"pointId\": \"1936\"}, {\"directionId\": \"1954\", \"distanceFromPoint\": 400, \"pointId\": \"2167\"}, {\"directionId\": \"1954\", \"distanceFromPoint\": 51, \"pointId\": \"1969\"}]"
+  },
+  {
+    "lineid": "39",
+    "vehiclepositions": "[{\"directionId\": \"89\", \"distanceFromPoint\": 0, \"pointId\": \"5273\"}, {\"directionId\": \"5281\", \"distanceFromPoint\": 354, \"pointId\": \"5503\"}, {\"directionId\": \"89\", \"distanceFromPoint\": 212, \"pointId\": \"5562\"}]"
+  },
+  {
+    "lineid": "41",
+    "vehiclepositions": "[{\"directionId\": \"4076\", \"distanceFromPoint\": 0, \"pointId\": \"1754\"}, {\"directionId\": \"1725\", \"distanceFromPoint\": 45, \"pointId\": \"1969\"}, {\"directionId\": \"1725\", \"distanceFromPoint\": 0, \"pointId\": \"4076\"}, {\"directionId\": \"1725\", \"distanceFromPoint\": 147, \"pointId\": \"2115\"}, {\"directionId\": \"4076\", \"distanceFromPoint\": 0, \"pointId\": \"1725\"}, {\"directionId\": \"4076\", \"distanceFromPoint\": 0, \"pointId\": \"5458\"}]"
+  },
+  {
+    "lineid": "43",
+    "vehiclepositions": "[{\"directionId\": \"1955\", \"distanceFromPoint\": 0, \"pointId\": \"1951\"}, {\"directionId\": \"2109\", \"distanceFromPoint\": 306, \"pointId\": \"1932\"}, {\"directionId\": \"1955\", \"distanceFromPoint\": 0, \"pointId\": \"1953\"}, {\"directionId\": \"4854\", \"distanceFromPoint\": 50, \"pointId\": \"2147\"}, {\"directionId\": \"4854\", \"distanceFromPoint\": 38, \"pointId\": \"2166\"}, {\"directionId\": \"4854\", \"distanceFromPoint\": 251, \"pointId\": \"4075\"}, {\"directionId\": \"2109\", \"distanceFromPoint\": 101, \"pointId\": \"2136\"}, {\"directionId\": \"2109\", \"distanceFromPoint\": 73, \"pointId\": \"1921\"}, {\"directionId\": \"1955\", \"distanceFromPoint\": 179, \"pointId\": \"2165\"}, {\"directionId\": \"4854\", \"distanceFromPoint\": 0, \"pointId\": \"2109\"}, {\"directionId\": \"1955\", \"distanceFromPoint\": 0, \"pointId\": \"2168\"}]"
+  },
+  {
+    "lineid": "49",
+    "vehiclepositions": "[{\"directionId\": \"2531\", \"distanceFromPoint\": 0, \"pointId\": \"2511\"}, {\"directionId\": \"2531\", \"distanceFromPoint\": 0, \"pointId\": \"1288\"}, {\"directionId\": \"2531\", \"distanceFromPoint\": 322, \"pointId\": \"2522\"}, {\"directionId\": \"1288\", \"distanceFromPoint\": 196, \"pointId\": \"2556\"}, {\"directionId\": \"1288\", \"distanceFromPoint\": 175, \"pointId\": \"2568\"}, {\"directionId\": \"2531\", \"distanceFromPoint\": 201, \"pointId\": \"6484\"}, {\"directionId\": \"2531\", \"distanceFromPoint\": 119, \"pointId\": \"2226\"}, {\"directionId\": \"1288\", \"distanceFromPoint\": 0, \"pointId\": \"2560\"}, {\"directionId\": \"1288\", \"distanceFromPoint\": 0, \"pointId\": \"2531\"}]"
+  },
+  {
+    "lineid": "55",
+    "vehiclepositions": "[{\"directionId\": \"9943\", \"distanceFromPoint\": 0, \"pointId\": \"0529\"}, {\"directionId\": \"9943\", \"distanceFromPoint\": 179, \"pointId\": \"5362\"}, {\"directionId\": \"9943\", \"distanceFromPoint\": 482, \"pointId\": \"0536\"}, {\"directionId\": \"529\", \"distanceFromPoint\": 72, \"pointId\": \"5872\"}, {\"directionId\": \"9943\", \"distanceFromPoint\": 0, \"pointId\": \"5867\"}, {\"directionId\": \"9943\", \"distanceFromPoint\": 0, \"pointId\": \"0529\"}, {\"directionId\": \"529\", \"distanceFromPoint\": 5, \"pointId\": \"5710\"}, {\"directionId\": \"529\", \"distanceFromPoint\": 132, \"pointId\": \"2726\"}, {\"directionId\": \"9943\", \"distanceFromPoint\": 361, \"pointId\": \"5765\"}]"
+  },
+  {
+    "lineid": "56",
+    "vehiclepositions": "[{\"directionId\": \"2378\", \"distanceFromPoint\": 362, \"pointId\": \"3059\"}, {\"directionId\": \"2378\", \"distanceFromPoint\": 0, \"pointId\": \"2098\"}, {\"directionId\": \"2378\", \"distanceFromPoint\": 0, \"pointId\": \"2719\"}, {\"directionId\": \"2378\", \"distanceFromPoint\": 10, \"pointId\": \"6190\"}, {\"directionId\": \"6465\", \"distanceFromPoint\": 158, \"pointId\": \"3575\"}, {\"directionId\": \"6465\", \"distanceFromPoint\": 0, \"pointId\": \"2096\"}, {\"directionId\": \"6465\", \"distanceFromPoint\": 0, \"pointId\": \"2379\"}, {\"directionId\": \"6465\", \"distanceFromPoint\": 0, \"pointId\": \"2379\"}, {\"directionId\": \"2378\", \"distanceFromPoint\": 0, \"pointId\": \"2719\"}, {\"directionId\": \"6465\", \"distanceFromPoint\": 0, \"pointId\": \"5740\"}]"
+  },
+  {
+    "lineid": "58",
+    "vehiclepositions": "[{\"directionId\": \"9751\", \"distanceFromPoint\": 37, \"pointId\": \"3244\"}, {\"directionId\": \"9751\", \"distanceFromPoint\": 483, \"pointId\": \"1121\"}, {\"directionId\": \"3244\", \"distanceFromPoint\": 0, \"pointId\": \"9751\"}, {\"directionId\": \"9751\", \"distanceFromPoint\": 0, \"pointId\": \"2271\"}, {\"directionId\": \"3244\", \"distanceFromPoint\": 196, \"pointId\": \"5908\"}, {\"directionId\": \"9751\", \"distanceFromPoint\": 207, \"pointId\": \"5965\"}, {\"directionId\": \"3244\", \"distanceFromPoint\": 220, \"pointId\": \"5742\"}, {\"directionId\": \"3244\", \"distanceFromPoint\": 0, \"pointId\": \"9751\"}]"
+  },
+  {
+    "lineid": "60",
+    "vehiclepositions": "[{\"directionId\": \"1425\", \"distanceFromPoint\": 0, \"pointId\": \"2701\"}, {\"directionId\": \"2701\", \"distanceFromPoint\": 0, \"pointId\": \"1425\"}, {\"directionId\": \"2701\", \"distanceFromPoint\": 0, \"pointId\": \"4705\"}, {\"directionId\": \"2701\", \"distanceFromPoint\": 48, \"pointId\": \"3921\"}, {\"directionId\": \"1425\", \"distanceFromPoint\": 0, \"pointId\": \"3081\"}, {\"directionId\": \"2701\", \"distanceFromPoint\": 0, \"pointId\": \"1652\"}, {\"directionId\": \"1425\", \"distanceFromPoint\": 12, \"pointId\": \"1986\"}, {\"directionId\": \"1425\", \"distanceFromPoint\": 357, \"pointId\": \"1250\"}, {\"directionId\": \"2701\", \"distanceFromPoint\": 0, \"pointId\": \"1425\"}, {\"directionId\": \"1425\", \"distanceFromPoint\": 330, \"pointId\": \"1929\"}]"
+  },
+  {
+    "lineid": "63",
+    "vehiclepositions": "[{\"directionId\": \"3401\", \"distanceFromPoint\": 224, \"pointId\": \"3761\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 126, \"pointId\": \"3217\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 121, \"pointId\": \"1569\"}, {\"directionId\": \"6442\", \"distanceFromPoint\": 0, \"pointId\": \"3401\"}, {\"directionId\": \"3401\", \"distanceFromPoint\": 102, \"pointId\": \"1509\"}, {\"directionId\": \"3401\", \"distanceFromPoint\": 293, \"pointId\": \"3765\"}]"
+  },
+  {
+    "lineid": "7",
+    "vehiclepositions": "[{\"directionId\": \"9969\", \"distanceFromPoint\": 0, \"pointId\": \"9056\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 3, \"pointId\": \"5258\"}, {\"directionId\": \"9969\", \"distanceFromPoint\": 38, \"pointId\": \"1049\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 222, \"pointId\": \"6456\"}, {\"directionId\": \"9969\", \"distanceFromPoint\": 710, \"pointId\": \"2636\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 0, \"pointId\": \"9963\"}, {\"directionId\": \"9969\", \"distanceFromPoint\": 18, \"pointId\": \"5220\"}, {\"directionId\": \"9969\", \"distanceFromPoint\": 246, \"pointId\": \"5707\"}, {\"directionId\": \"9969\", \"distanceFromPoint\": 0, \"pointId\": \"5205\"}, {\"directionId\": \"9969\", \"distanceFromPoint\": 59, \"pointId\": \"5758\"}, {\"directionId\": \"9969\", \"distanceFromPoint\": 0, \"pointId\": \"9056\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 0, \"pointId\": \"5354\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 691, \"pointId\": \"5770\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 269, \"pointId\": \"5255\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 635, \"pointId\": \"2635\"}, {\"directionId\": \"9969\", \"distanceFromPoint\": 0, \"pointId\": \"5758\"}, {\"directionId\": \"6421\", \"distanceFromPoint\": 0, \"pointId\": \"9969\"}, {\"directionId\": \"9051\", \"distanceFromPoint\": 321, \"pointId\": \"0906\"}]"
+  },
+  {
+    "lineid": "73",
+    "vehiclepositions": "[{\"directionId\": \"2382\", \"distanceFromPoint\": 0, \"pointId\": \"1664\"}, {\"directionId\": \"2382\", \"distanceFromPoint\": 0, \"pointId\": \"2382\"}, {\"directionId\": \"1662\", \"distanceFromPoint\": 3, \"pointId\": \"3859\"}]"
+  },
+  {
+    "lineid": "76",
+    "vehiclepositions": "[{\"directionId\": \"1638\", \"distanceFromPoint\": 456, \"pointId\": \"1673\"}, {\"directionId\": \"1638\", \"distanceFromPoint\": 0, \"pointId\": \"1629\"}, {\"directionId\": \"1629\", \"distanceFromPoint\": 300, \"pointId\": \"1638\"}]"
+  },
+  {
+    "lineid": "82",
+    "vehiclepositions": "[{\"directionId\": \"4263\", \"distanceFromPoint\": 0, \"pointId\": \"5121\"}, {\"directionId\": \"5121\", \"distanceFromPoint\": 0, \"pointId\": \"4262\"}, {\"directionId\": \"5121\", \"distanceFromPoint\": 0, \"pointId\": \"4262\"}, {\"directionId\": \"5121\", \"distanceFromPoint\": 0, \"pointId\": \"3263\"}, {\"directionId\": \"4263\", \"distanceFromPoint\": 0, \"pointId\": \"4054\"}, {\"directionId\": \"5121\", \"distanceFromPoint\": 0, \"pointId\": \"6657\"}, {\"directionId\": \"5121\", \"distanceFromPoint\": 0, \"pointId\": \"4262\"}, {\"directionId\": \"4263\", \"distanceFromPoint\": 58, \"pointId\": \"3226\"}, {\"directionId\": \"4263\", \"distanceFromPoint\": 0, \"pointId\": \"5151\"}, {\"directionId\": \"4263\", \"distanceFromPoint\": 42, \"pointId\": \"0636\"}, {\"directionId\": \"5121\", \"distanceFromPoint\": 127, \"pointId\": \"2604\"}, {\"directionId\": \"4263\", \"distanceFromPoint\": 0, \"pointId\": \"5121\"}, {\"directionId\": \"5121\", \"distanceFromPoint\": 262, \"pointId\": \"1308\"}]"
+  },
+  {
+    "lineid": "83",
+    "vehiclepositions": "[{\"directionId\": \"2822\", \"distanceFromPoint\": 196, \"pointId\": \"2747\"}, {\"directionId\": \"2822\", \"distanceFromPoint\": 0, \"pointId\": \"2845\"}, {\"directionId\": \"2822\", \"distanceFromPoint\": 48, \"pointId\": \"2817\"}, {\"directionId\": \"2845\", \"distanceFromPoint\": 733, \"pointId\": \"2746\"}, {\"directionId\": \"2845\", \"distanceFromPoint\": 207, \"pointId\": \"4165\"}, {\"directionId\": \"2822\", \"distanceFromPoint\": 36, \"pointId\": \"2160\"}, {\"directionId\": \"2845\", \"distanceFromPoint\": 288, \"pointId\": \"2855\"}, {\"directionId\": \"2822\", \"distanceFromPoint\": 56, \"pointId\": \"4072\"}, {\"directionId\": \"2845\", \"distanceFromPoint\": 162, \"pointId\": \"3606\"}, {\"directionId\": \"2845\", \"distanceFromPoint\": 0, \"pointId\": \"2822\"}]"
+  },
+  {
+    "lineid": "87",
+    "vehiclepositions": "[{\"directionId\": \"1112\", \"distanceFromPoint\": 0, \"pointId\": \"4656\"}, {\"directionId\": \"1112\", \"distanceFromPoint\": 0, \"pointId\": \"4014\"}, {\"directionId\": \"4014\", \"distanceFromPoint\": 0, \"pointId\": \"3238\"}, {\"directionId\": \"1112\", \"distanceFromPoint\": 34, \"pointId\": \"4115\"}, {\"directionId\": \"1112\", \"distanceFromPoint\": 0, \"pointId\": \"1196\"}, {\"directionId\": \"1112\", \"distanceFromPoint\": 152, \"pointId\": \"4107\"}, {\"directionId\": \"4014\", \"distanceFromPoint\": 181, \"pointId\": \"4599\"}, {\"directionId\": \"4014\", \"distanceFromPoint\": 17, \"pointId\": \"1099\"}, {\"directionId\": \"4014\", \"distanceFromPoint\": 16, \"pointId\": \"4153\"}, {\"directionId\": \"4014\", \"distanceFromPoint\": 0, \"pointId\": \"4168\"}, {\"directionId\": \"1112\", \"distanceFromPoint\": 89, \"pointId\": \"3233\"}]"
+  },
+  {
+    "lineid": "88",
+    "vehiclepositions": "[{\"directionId\": \"1727\", \"distanceFromPoint\": 2, \"pointId\": \"2170\"}, {\"directionId\": \"2070\", \"distanceFromPoint\": 0, \"pointId\": \"2370\"}, {\"directionId\": \"2070\", \"distanceFromPoint\": 34, \"pointId\": \"1744\"}, {\"directionId\": \"2070\", \"distanceFromPoint\": 191, \"pointId\": \"1904\"}, {\"directionId\": \"2070\", \"distanceFromPoint\": 36, \"pointId\": \"2171\"}, {\"directionId\": \"1727\", \"distanceFromPoint\": 435, \"pointId\": \"2305\"}, {\"directionId\": \"1727\", \"distanceFromPoint\": 0, \"pointId\": \"2070\"}, {\"directionId\": \"1727\", \"distanceFromPoint\": 52, \"pointId\": \"1722\"}, {\"directionId\": \"2070\", \"distanceFromPoint\": 0, \"pointId\": \"1732\"}]"
+  },
+  {
+    "lineid": "95",
+    "vehiclepositions": "[{\"directionId\": \"4318\", \"distanceFromPoint\": 0, \"pointId\": \"4349\"}, {\"directionId\": \"1781\", \"distanceFromPoint\": 46, \"pointId\": \"1983\"}, {\"directionId\": \"1781\", \"distanceFromPoint\": 0, \"pointId\": \"4355\"}, {\"directionId\": \"4318\", \"distanceFromPoint\": 262, \"pointId\": \"4303\"}, {\"directionId\": \"1781\", \"distanceFromPoint\": 464, \"pointId\": \"4357\"}, {\"directionId\": \"4318\", \"distanceFromPoint\": 262, \"pointId\": \"4313\"}, {\"directionId\": \"4318\", \"distanceFromPoint\": 38, \"pointId\": \"4306\"}, {\"directionId\": \"4318\", \"distanceFromPoint\": 0, \"pointId\": \"4310\"}, {\"directionId\": \"4318\", \"distanceFromPoint\": 500, \"pointId\": \"6354\"}, {\"directionId\": \"1781\", \"distanceFromPoint\": 931, \"pointId\": \"6432\"}, {\"directionId\": \"4318\", \"distanceFromPoint\": 0, \"pointId\": \"1781\"}, {\"directionId\": \"1781\", \"distanceFromPoint\": 0, \"pointId\": \"4351\"}, {\"directionId\": \"1781\", \"distanceFromPoint\": 365, \"pointId\": \"4363\"}, {\"directionId\": \"4318\", \"distanceFromPoint\": 631, \"pointId\": \"6354\"}, {\"directionId\": \"1781\", \"distanceFromPoint\": 0, \"pointId\": \"4360\"}, {\"directionId\": \"4318\", \"distanceFromPoint\": 345, \"pointId\": \"2392\"}]"
+  },
+  {
+    "lineid": "T82",
+    "vehiclepositions": "[{\"directionId\": \"2475\", \"distanceFromPoint\": 0, \"pointId\": \"3415\"}, {\"directionId\": \"3415\", \"distanceFromPoint\": 326, \"pointId\": \"2738\"}, {\"directionId\": \"2475\", \"distanceFromPoint\": 403, \"pointId\": \"3415\"}, {\"directionId\": \"3415\", \"distanceFromPoint\": 0, \"pointId\": \"2023\"}, {\"directionId\": \"2475\", \"distanceFromPoint\": 91, \"pointId\": \"3255\"}, {\"directionId\": \"3415\", \"distanceFromPoint\": 0, \"pointId\": \"2610\"}, {\"directionId\": \"2475\", \"distanceFromPoint\": 0, \"pointId\": \"3415\"}, {\"directionId\": \"2475\", \"distanceFromPoint\": 120, \"pointId\": \"1414\"}]"
+  }
+]
