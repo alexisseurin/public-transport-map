@@ -10,6 +10,11 @@
                 "maxAgeTarget": 300, // 5 minutes in seconds
                 "maxAgeResource": 1576800 // 6 months in seconds
             }
-        ]
+        ],
+        "detect-css-reflows/paint": "error",
+        "detect-css-reflows/composite": "error",
+        "no-inline-styles": [ "warning", {
+            "requireNoStyleElement": true
+        }]
     }
 }

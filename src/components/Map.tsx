@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import L, { divIcon, point, LatLngExpression } from "leaflet";
@@ -17,6 +17,7 @@ interface MapProps {
   stops: StopData[];
   routes: RouteData[];
   trains: TrainData[];
+  loading: boolean;
 }
 
 const BELGIUM_BOUNDS = {
@@ -42,7 +43,7 @@ const getPlaceholder = (routeType: string) => {
 
 
 const createClusterCustomIcon = (cluster: L.MarkerCluster) => divIcon({
-  html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
+  html: `<span class="cluster-icon fade-in">${cluster.getChildCount()}</span>`,
   className: "custom-marker-cluster",
   iconSize: point(35, 35, true)
 });
@@ -124,11 +125,22 @@ const interpolatePosition = (start: [number, number], end: [number, number], fra
   return [lat, lon];
 };
 
-const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
+const Map: React.FC<MapProps> = ({ stops, routes, trains, loading }) => {
   //console.log('Stops in Map component:', stops);
   //console.log('Routes in Map component:', routes);
   //console.log('Trains in Map component:', trains);
-  
+  const [hasLoaded, setHasLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!loading) {
+      setTimeout(() => setHasLoaded(true), 100); // Delay to ensure smooth fade-in effect
+    }
+  }, [loading]);
+
+  if (loading || !hasLoaded) {
+    return /*<div>Loading...</div>*/; // Show a loading message or spinner while loading
+  }
+
   const tramRoutes = routes.flatMap((route, index) => {
     return route.shape.geometry.coordinates.map((coords, i) => {
       const segmentCoordinates = coords.map(
@@ -146,6 +158,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
           opacity={0.7}
           lineJoin="round"
           lineCap="round"
+          className="fade-in"
         />
       );
     });
@@ -203,7 +216,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   
           return L.divIcon({
             html: `
-              <div class="custom-icon-wrapper">
+              <div class="custom-icon-wrapper fade-in">
                 <img src="${imageSrc}" class="custom-icon-img" />
                 <div class="custom-icon-label">
                   <div class="line--big line-${train.lineid.startsWith('T') || train.lineid.startsWith('M') ? train.lineid.slice(1) : train.lineid}">
@@ -273,14 +286,14 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   const createStopCustomIcon = (stop: StopData) => {
     const uniqueLines = [...new Set(stop.ordersAndLineIds.map((line: { lineid: string }) => line.lineid).filter(Boolean))];
     const lineIcons = uniqueLines.map((lineId: string) => `
-      <div class="line-column line--big line-${lineId.startsWith('T') || lineId.startsWith('M') ? lineId.slice(1) : lineId}" style="margin-bottom: 5px;">
+      <div class="line-column fade-in line--big line-${lineId.startsWith('T') || lineId.startsWith('M') ? lineId.slice(1) : lineId}" style="margin-bottom: 5px;">
         ${lineId.startsWith('T') || lineId.startsWith('M') ? lineId.slice(1) : lineId}
       </div>
     `).join('');
   
     return L.divIcon({
       html: `
-        <div class="custom-icon-wrapper">
+        <div class="custom-icon-wrapper fade-in">
           <img src="${stopPlaceholder}" class="custom-icon-img" />
           <div class="custom-icon-label">
             ${lineIcons}
@@ -294,7 +307,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
   
 
   return (
-    <MapContainer className="map-container" center={[50.84045, 4.34878]} zoom={13} minZoom={1} maxZoom={19}>
+    <MapContainer className="map-container fade-in" center={[50.84045, 4.34878]} zoom={13} minZoom={1} maxZoom={19}>
       <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" maxZoom={19}/>
       <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
         {stops.map((stop, index) => (
@@ -387,7 +400,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains }) => {
       </MarkerClusterGroup>
       {trainMarkers}
 
-      <div className="leaflet-top leaflet-right">
+      <div className="leaflet-top fade-in leaflet-right">
         <div className="leaflet-control-info leaflet-control">
           <button id="infoButton" title="Map Information">
             <img src={informationPlaceholder} alt="Information"/>

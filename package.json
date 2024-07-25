@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@hint/configuration-development": "^8.3.19",
+    "@hint/hint-no-inline-styles": "^1.0.18",
     "@types/jest": "^29.0.0",
     "@types/leaflet": "^1.9.12",
     "@types/react": "^18.2.66",

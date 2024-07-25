@@ -10,70 +10,69 @@ import './components/StatCounter.css';
 import stopPlaceholder from './assets/map/stop.svg';
 import trainPlaceholder from './assets/vehicles/train.svg';
 import routePlaceholder from "./assets/map/road.svg";
-//import React from 'react';
 
 function App() {
   const [routes, setRoutes] = useState<RouteData[]>([]);
   const [stops, setStops] = useState<StopData[]>([]);
   const [trains, setTrains] = useState<TrainData[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isLineDisplayVisible, setisLineDisplayVisible] = useState(false);
+  const [isLineDisplayVisible, setIsLineDisplayVisible] = useState(false);
 
   const updateTrainPositions = useCallback((newTrains: TrainData[]) => {
     setTrains(newTrains);
   }, []);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [routesData, stopsData, trainsData, stopDetailsData, stopsByLineData] = await Promise.all([
+          fetch('data/gtfs-routes-production.json').then(response => response.json()),
+          fetch('data/gtfs-stops-production.json').then(response => response.json()),
+          fetch('data/vehicle-position-rt-production.json').then(response => response.json()),
+          fetch('data/stop-details-production.json').then(response => response.json()),
+          fetch('data/stops-by-line-production.json').then(response => response.json())
+        ]);
 
-    
-    Promise.all([
-      fetch('data/gtfs-routes-production.json').then(response => response.json()),
-      fetch('data/gtfs-stops-production.json').then(response => response.json()),
-      fetch('data/vehicle-position-rt-production.json').then(response => response.json()),
-      fetch('data/stop-details-production.json').then(response => response.json()),
-      fetch('data/stops-by-line-production.json').then(response => response.json())
-    ]).then(([routesData, stopsData, trainsData, stopDetailsData, stopsByLineData]) => {
-      console.log('Routes, stops, and trains loaded');
-      
-      const combinedStopsData = stopsData.map((stop: { stop_id: string; stop_name: string; }) => {
-        const stopDetails = stopDetailsData.find((detail: { id: string; name: string; }) => detail.id === stop.stop_id);
-        const stopName = stopDetails ? JSON.parse(stopDetails.name.replace(/\\/g, '')) : { fr: stop.stop_name, nl: stop.stop_name };
+        const combinedStopsData = stopsData.map((stop: { stop_id: string; stop_name: string; }) => {
+          const stopDetails = stopDetailsData.find((detail: { id: string; name: string; }) => detail.id === stop.stop_id);
+          const stopName = stopDetails ? JSON.parse(stopDetails.name.replace(/\\/g, '')) : { fr: stop.stop_name, nl: stop.stop_name };
         
-        const ordersAndLineIds: { order: number; lineid: string; }[] = [];
-        stopsByLineData.forEach((line: { lineid: string, points: string }) => {
+          const ordersAndLineIds = stopsByLineData.reduce((acc: { order: number; lineid: string }[], line: { lineid: string; points: string }) => {
             const points = JSON.parse(line.points);
             const stopPoint = points.find((point: { id: string; order: number }) => point.id === stop.stop_id);
             if (stopPoint) {
-                ordersAndLineIds.push({ order: stopPoint.order, lineid: line.lineid });
+              acc.push({ order: stopPoint.order, lineid: line.lineid });
             }
-        });
-    
-        return {
+            return acc;
+          }, []);
+        
+          return {
             ...stop,
             stop_name: stopName,
-            ordersAndLineIds: ordersAndLineIds
-        };
-    });
-    
-  
-      setRoutes(routesData);
-      setStops(combinedStopsData); 
-      updateTrainPositions(trainsData);
-      setIsLoaded(true);
-    }).catch(error => {
-      console.error('Error loading data:', error);
-    });
-
-    const fetchTrainData = () => {
-      fetch('data/vehicle-position-rt-production.json')
-        .then(response => response.json())
-        .then(data => {
-          console.log('Trains loaded:', data); 
-          setTrains(data);
-        })
-        .catch(error => {
-          console.error('Error loading trains:', error);
+            ordersAndLineIds
+          };
         });
+        
+
+        setRoutes(routesData);
+        setStops(combinedStopsData);
+        updateTrainPositions(trainsData);
+        setIsLoaded(true);
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
+    };
+
+    fetchData();
+
+    const fetchTrainData = async () => {
+      try {
+        const response = await fetch('data/vehicle-position-rt-production.json');
+        const data = await response.json();
+        updateTrainPositions(data);
+      } catch (error) {
+        console.error('Error loading trains:', error);
+      }
     };
 
     fetchTrainData(); // Initial fetch
@@ -81,41 +80,36 @@ function App() {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [updateTrainPositions]);
-  
 
-    const { RouteCount, stopCount, trainCount } = useMemo(() => {
-      const totalRoutes = routes.length;
-      const totalStops = stops.length;
-      const totalTrains = trains.length;
-  
+  const { RouteCount, stopCount, trainCount } = useMemo(() => {
     return {
-        RouteCount: totalRoutes,
-        stopCount: totalStops,
-        trainCount: totalTrains
-      };
-    }, [routes, stops, trains]);
-
-    const toggleStatsVisibility = () => {
-      setisLineDisplayVisible(!isLineDisplayVisible);
+      RouteCount: routes.length,
+      stopCount: stops.length,
+      trainCount: trains.length
     };
-  
-    return (
-      <div className="app-container">
-        <div className="top-left-text">
-          <span>Public transport map</span>
-        </div>
-        <div className="bottom-left-stats">
-          <StatCounter icon={routePlaceholder} label="lines" count={RouteCount} />
-          <StatCounter icon={stopPlaceholder} label="stops" count={stopCount} />
-          <StatCounter icon={trainPlaceholder} label="trams, subways and buses" count={trainCount} />
-        </div>
-        <LinesDisplay 
-          isLineDisplayVisible={isLineDisplayVisible}
-          toggleStatsVisibility={toggleStatsVisibility} 
-        />
-        {isLoaded && <Map routes={routes} stops={stops} trains={trains} />}
+  }, [routes, stops, trains]);
+
+  const toggleStatsVisibility = useCallback(() => {
+    setIsLineDisplayVisible(prevState => !prevState);
+  }, []);
+
+  return (
+    <div className="app-container">
+      <div className="top-left-text">
+        <span>Public transport map</span>
       </div>
-    );
-  }
+      <div className="bottom-left-stats">
+        <StatCounter icon={routePlaceholder} label="lines" count={RouteCount} />
+        <StatCounter icon={stopPlaceholder} label="stops" count={stopCount} />
+        <StatCounter icon={trainPlaceholder} label="trams, subways and buses" count={trainCount} />
+      </div>
+      <LinesDisplay 
+        isLineDisplayVisible={isLineDisplayVisible}
+        toggleStatsVisibility={toggleStatsVisibility} 
+      />
+      {isLoaded && <Map routes={routes} stops={stops} trains={trains} loading={!isLoaded} />}
+    </div>
+  );
+}
 
 export default App;
