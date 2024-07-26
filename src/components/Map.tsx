@@ -80,7 +80,7 @@ const interpolateTrainPosition = (route: RouteData, pointId: string, distanceToN
   // Find the start point coordinates from pointId
   const startStop = findStopById(stops, pointId);
   if (!startStop) {
-    console.error(`Start stop not found for pointId: ${pointId}`);
+    //console.error(`Start stop not found for pointId: ${pointId}`);
     return [0, 0]; // Valeur de secours en cas de problème
   }
   const startCoords: [number, number] = [startStop.stop_coordinates.lat, startStop.stop_coordinates.lon];
@@ -170,7 +170,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains, loading }) => {
     return trains.flatMap(train => {
       const route = findRouteById(routes, train.lineid);
       if (!route) {
-        console.error(`Route not found for train lineid: ${train.lineid}`);
+        //console.error(`Route not found for train lineid: ${train.lineid}`);
         return [];
       }
 
@@ -183,13 +183,13 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains, loading }) => {
           vehiclePositions = train.vehiclepositions;
         }
       } catch (error) {
-        console.error(`Error parsing vehicle positions for train lineid: ${train.lineid}`, error);
+        //console.error(`Error parsing vehicle positions for train lineid: ${train.lineid}`, error);
         console.error(`Invalid JSON: ${train.vehiclepositions}`);
         return [];
       }
 
       if (!Array.isArray(vehiclePositions)) {
-        console.error(`Vehicle positions are not an array for train lineid: ${train.lineid}`, vehiclePositions);
+        //console.error(`Vehicle positions are not an array for train lineid: ${train.lineid}`, vehiclePositions);
         return [];
       }
       
@@ -201,7 +201,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains, loading }) => {
         const trainCoords = interpolateTrainPosition(route, position.pointId, position.distanceFromPoint, stops);
 
         if (!isInBelgium(trainCoords[0], trainCoords[1])) {
-          console.error(`Train position out of Belgium bounds for train: ${train.lineid}, pointId: ${position.pointId}`);
+          //console.error(`Train position out of Belgium bounds for train: ${train.lineid}, pointId: ${position.pointId}`);
           return null;
         }
 

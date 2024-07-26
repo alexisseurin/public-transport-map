@@ -52,14 +52,13 @@ function App() {
             ordersAndLineIds
           };
         });
-        
 
         setRoutes(routesData);
         setStops(combinedStopsData);
         updateTrainPositions(trainsData);
         setIsLoaded(true);
       } catch (error) {
-        console.error('Error loading data:', error);
+        console.error('Error loading data:', error); // Uncommented error logging
       }
     };
 
@@ -71,7 +70,7 @@ function App() {
         const data = await response.json();
         updateTrainPositions(data);
       } catch (error) {
-        console.error('Error loading trains:', error);
+        console.error('Error loading trains:', error); // Uncommented error logging
       }
     };
 
