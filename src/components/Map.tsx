@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import L, { divIcon, point, LatLngExpression } from "leaflet";
@@ -130,12 +130,16 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains, loading }) => {
   //console.log('Routes in Map component:', routes);
   //console.log('Trains in Map component:', trains);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const mapRef = useRef(null);
 
   useEffect(() => {
     if (!loading) {
       setTimeout(() => setHasLoaded(true), 100); // Delay to ensure smooth fade-in effect
     }
-  }, [loading]);
+    }, [loading]);
+
+
+  //const handleMoveEnd = () => { if (mapRef.current) { const map = mapRef.current; setMapState({ center: map.getCenter(), zoom: map.getZoom() }); } };
 
   if (loading || !hasLoaded) {
     return /*<div>Loading...</div>*/; // Show a loading message or spinner while loading
@@ -307,7 +311,7 @@ const Map: React.FC<MapProps> = ({ stops, routes, trains, loading }) => {
   
 
   return (
-    <MapContainer className="map-container fade-in" center={[50.84045, 4.34878]} zoom={13} minZoom={1} maxZoom={19}>
+    <MapContainer className="map-container fade-in" center={[50.84045, 4.34878]} zoom={13} minZoom={10} maxZoom={19} maxBounds={[[49.496674, 2.54689], [51.505493, 6.403847]]} ref={mapRef} >
       <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" maxZoom={19}/>
       <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
         {stops.map((stop, index) => (
